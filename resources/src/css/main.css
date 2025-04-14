@@ -1,0 +1,24 @@
+:root {
+    /* Colors */
+    --light-green: #7FE77F;
+    --dark-green: #0E740E;
+    --dark-blue: #08053F;
+
+    --border-color: #BEBEBE;
+
+    --text-color: #363636;
+    --light-text-color: #545151;
+    --white-text-color: #E7E7E7;
+
+    --header-font: 'Oswald', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}

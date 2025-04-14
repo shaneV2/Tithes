@@ -4,18 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/homepage.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div>
         <header>
-            <p>AP</p>
-            <h1>ADMIN PANEL</h1>
+            <div>
+                <p>AP</p>
+                <h1>ADMIN PANEL</h1>
+            </div>
             <nav>
                 <div>
-                    <img src="resources/src/assets/images/Menu.png" height="48" width="48" alt="">
+                    <img src="../src/assets/images/Menu.png" height="48" width="48" alt="">
                 </div>
             </nav>
         </header>
+        <section id="date-section">
+            <p>Select Date</p>
+            <form action="">
+                <div class="select-container">
+                    <select class="input-field" name="month" id="month">
+                        <option value="None">Month
+                        </option>
+                    </select>
+                    <div class="dropdown-icon">
+                        <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
+                    </div>
+                </div>
+                <div class="select-container">
+                    <select class="input-field" name="year" id="year">
+                        <option value="None">Year
+                        </option>
+                    </select>
+                    <div class="dropdown-icon">
+                        <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">
+                        <img src="../src/assets/images/Filter.png" alt="filter image">
+                    </button>
+                </div>
+            </form>
+        </section>
+        <main>
+            <section id="recent-section">
+                <p>Recent</p>
+                <div>
+                    <p>Tithes and Offering: <span>1,000</span></p>
+                    <p>Mission: <span>500</span></p>
+                    <p>OMG: <span>100</span></p>
+                    <p>Pledges: <span></span></p>
+                    <p>Donation: <span></span></p>
+                    <p>Total: <span>1,600</span></p>
+                </div>
+            </section>
+            <section id="savings-section">
+                <p>Savings</p>
+                <div>
+                    <p>PHP: 1,000</p>
+                    <p>One thousand pesos</p>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
