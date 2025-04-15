@@ -21,4 +21,6 @@
 
 body {
     background-color: white;
+    max-width: 578px;
+    margin: auto;
 }

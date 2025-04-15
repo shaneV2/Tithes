@@ -55,6 +55,37 @@ select {
     margin: 43px 8px 0;
     font-family: var(--body-font);
     color: var(--text-color);
+    position: relative;
+}
+
+#months-options {
+    position: absolute;
+    bottom: -140px;
+    left: 5%;
+    right: 5%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;  
+    gap: 10px;  
+    border-radius: 10px;
+    overflow: hidden;
+    border: var(--border-color) 1px solid;
+    padding: 10px;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+#months-options > button {
+    padding: 10px 10px;
+    background-color: white;
+    border: none;
+    color: var(--text-color);
+}
+
+#months-options > button:hover {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
 }
 
 .select-container {
@@ -87,7 +118,7 @@ select {
     text-align: center;
 }
 
-#date-section button {
+#date-section #submit-btn > button {
     padding: 17px 38px;
     border: none;
     background-color: var(--light-green);
