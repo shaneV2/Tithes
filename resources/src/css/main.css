@@ -22,5 +22,6 @@
 body {
     background-color: white;
     max-width: 578px;
+    min-width: 454px;
     margin: auto;
 }
