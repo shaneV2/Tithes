@@ -129,10 +129,12 @@ select {
     overflow: hidden;
     display: grid;
     grid-auto-flow: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     gap: 10px;
+    padding: 10px;
 }
+
 
 .dropdown-icon {
     width: 20px;
@@ -140,17 +142,23 @@ select {
     background-color: white;
 }
 
-.select-container,
-#date-section form button{
-    border-radius: 5px;
-}
-
 .input-field {
     border: none;
     /* padding: 1.1rem 1.2rem; */
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
     color: var(--text-color);
     text-align: center;
+}
+
+.input-field::placeholder {
+    color: var(--text-color);
+}
+
+.select-container,
+#date-section form button{
+    border-radius: 5px;
 }
 
 #date-section #submit-btn > button {

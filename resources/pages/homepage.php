@@ -54,21 +54,15 @@
                 </div>
             </div>
             <p>Select Date</p>
-            <form action="">
+            <form action="test.php" method="get">
                 <div class="select-container">
-                    <select class="input-field" name="month" id="month">
-                        <option value="None">Month
-                        </option>
-                    </select>
+                    <input class="input-field" type="text" name="month" id="month" value="" placeholder="Month" readonly>
                     <div class="dropdown-icon">
                         <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>
                 </div>
                 <div class="select-container">
-                    <select class="input-field" name="year" id="year">
-                        <option value="None">Year
-                        </option>
-                    </select>
+                    <input class="input-field" type="text" name="year" id="year" value="" placeholder="Year" readonly>
                     <div class="dropdown-icon">
                         <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>

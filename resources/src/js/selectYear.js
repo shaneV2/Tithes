@@ -1,5 +1,5 @@
-let year = document.getElementById("year")[0];
-let year_buttons = document.querySelectorAll(".year-btn");
+const year = document.getElementById("year");
+const year_buttons = document.querySelectorAll(".year-btn");
 const year_options = document.getElementById("years-options");
 
 function selectYear(e){
