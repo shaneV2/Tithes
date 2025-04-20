@@ -19,7 +19,8 @@
     padding: 0;
 }
 
-body {
+.main,
+.navigation-pane {
     background-color: white;
     max-width: 578px;
     min-width: 454px;

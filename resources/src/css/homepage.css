@@ -12,6 +12,9 @@
 
     --header-font: 'Oswald', sans-serif;
     --body-font: 'Inter', sans-serif;
+
+    --border-1: 1px solid red;
+    --border-2: 1px solid green;
 }
 
 header,
@@ -21,9 +24,55 @@ header,
     padding: 0 1.05rem;
 }
 
-body {
+.main {
+    background-color: red;
     padding: 23px 0 100px;
 }
+
+/* Navigation pane */
+.navigation-pane {
+    position: absolute;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    gap: 74px;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    height: 100%;
+    font-family: var(--body-font);
+    background-color: white;
+    padding: 39px 32px;
+    /* inset: 0; */
+}
+
+.navigation-pane > div:nth-child(2) {
+    padding: 0 8px;
+    overflow-y: auto;
+    max-height: 380px;
+    display: flex;
+    margin: 0 8px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navigation-pane > div:nth-child(2) > p {
+    padding: 26px 134px;
+    border-top: var(--border-color) 1px solid;
+}
+
+.navigation-pane > div:nth-child(2) > p:last-child {
+    border-bottom: var(--border-color) 1px solid;
+}
+
+.navigation-pane > button {
+    padding: 26px 131px;
+    font-size: 1.4rem;
+    font-family: var(--body-font);
+    border-radius: 20px;
+    border: var(--border-color) 1px solid;
+}
+
 
 header,
 header > div {

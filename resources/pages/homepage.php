@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div class="main">
         <header>
             <div>
                 <p>AP</p>
@@ -20,10 +20,18 @@
             </div>
             <nav>
                 <div>
-                    <img src="../src/assets/images/Menu.png" height="48" width="48" alt="">
+                    <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
                 </div>
             </nav>
         </header>
+        <aside class="navigation-pane">
+            <div><img src="../src/assets/images/close.png" width="38" hieght="38" alt=""></div>
+            <div>
+                <p>Giving</p>
+                <p>Members</p>
+            </div>
+            <button>Logout</button>
+        </aside>
         <section id="date-section">
             <div id="months-options">
                 <button class="month-btn">January</button>
