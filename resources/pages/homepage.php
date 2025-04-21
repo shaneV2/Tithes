@@ -19,18 +19,20 @@
                 <h1>ADMIN PANEL</h1>
             </div>
             <nav>
-                <div>
+                <div id="menu-icon">
                     <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
                 </div>
             </nav>
         </header>
-        <aside class="navigation-pane">
-            <div><img src="../src/assets/images/close.png" width="38" hieght="38" alt=""></div>
+        <aside id="navigation-pane">
             <div>
-                <p>Giving</p>
-                <p>Members</p>
+                <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
+                <div>
+                    <a href="#">Giving</a>
+                    <a href="#">Members</a>
+                </div>
+                <button>Logout</button>
             </div>
-            <button>Logout</button>
         </aside>
         <section id="date-section">
             <div id="months-options">
@@ -106,5 +108,6 @@
     <script src="../src/js/selectDate.js" type="module"></script>
     <script src="../src/js/selectMonth.js" type="module"></script>
     <script src="../src/js/selectYear.js" type="module"></script>
+    <script src="../src/js/toggleNavigation.js" type="module"></script>
 </body>
 </html>

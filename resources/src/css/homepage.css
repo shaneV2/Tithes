@@ -25,28 +25,43 @@ header,
 }
 
 .main {
-    background-color: red;
     padding: 23px 0 100px;
+    position: relative;
 }
 
 /* Navigation pane */
-.navigation-pane {
-    position: absolute;
+#menu-icon {
+    display: flex;
+    color: var(--text-color);
+    margin-top: 7px;
+}
+
+#close-menu-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+#navigation-pane {
+    color: var(--text-color);
     z-index: 100;
+    box-sizing: border-box;
+    height: 100lvh;
+    font-family: var(--body-font);
+    background-color: white;
+    padding: 39px 32px;
+    position: absolute;
     inset: 0;
+}
+
+#navigation-pane > div {
     display: grid;
     gap: 74px;
     grid-template-rows: auto 1fr auto;
     box-sizing: border-box;
     font-size: 1.4rem;
-    height: 100%;
-    font-family: var(--body-font);
-    background-color: white;
-    padding: 39px 32px;
-    /* inset: 0; */
 }
 
-.navigation-pane > div:nth-child(2) {
+#navigation-pane > div >  div:nth-child(2) {
     padding: 0 8px;
     overflow-y: auto;
     max-height: 380px;
@@ -56,16 +71,18 @@ header,
     text-align: center;
 }
 
-.navigation-pane > div:nth-child(2) > p {
+#navigation-pane > div> div:nth-child(2) > a {
     padding: 26px 134px;
     border-top: var(--border-color) 1px solid;
+    text-decoration: none;
+    color: inherit;
 }
 
-.navigation-pane > div:nth-child(2) > p:last-child {
+#navigation-pane > div > div:nth-child(2) > a:last-child {
     border-bottom: var(--border-color) 1px solid;
 }
 
-.navigation-pane > button {
+#navigation-pane > div > button {
     padding: 26px 131px;
     font-size: 1.4rem;
     font-family: var(--body-font);

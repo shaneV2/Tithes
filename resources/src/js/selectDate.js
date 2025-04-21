@@ -11,18 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
     month_container.addEventListener("click", () => {
         if (isMonthOptionOpen){
             month_options.style.display = "none";
-        }else{
+        }else if (isYearOptionOpen  || isMonthOptionOpen == false){
+            isYearOptionOpen = false
+            year_options.style.display = "none";
             month_options.style.display = "grid";
         }
-        isMonthOptionOpen = !isMonthOptionOpen;
+        isMonthOptionOpen = (isMonthOptionOpen) ? false : true;
     })
 
     year_container.addEventListener("click", () => {
         if (isYearOptionOpen){
             year_options.style.display = "none";
-        }else{
+        }else if(isMonthOptionOpen || isYearOptionOpen == false){
+            isMonthOptionOpen = false
+            month_options.style.display = "none";
             year_options.style.display = "grid";
         }
-        isYearOptionOpen = !isYearOptionOpen;
+        isYearOptionOpen = (isYearOptionOpen) ? false : true;
     })
 })
