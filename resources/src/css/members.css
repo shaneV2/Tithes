@@ -18,7 +18,8 @@
 }
 
 header,
-#add-member-section{
+#add-member-section,
+#search-member-section {
     padding: 0 1.05rem;
 }
 
@@ -142,8 +143,8 @@ header > div > p {
     font-size: 1.1rem;
 }
 
-#user-code {
-    padding: 9px 18px;
+#user-code-field > .user-code {
+    padding: 15px 18px;
     width: 100%;
     box-sizing: border-box;
     border: var(--border-color) 1px solid;
@@ -153,6 +154,47 @@ header > div > p {
     padding: 22px;
     background-color: var(--dark-green);
     border: none;
+    color: var(--white-text-color);
+    font-family: var(--body-font);
+    border-radius: 5px;
+}
+
+/* Search member section */
+#search-member-section {
+    margin-top: 42px;
+    font-family: var(--body-font);
+}
+
+#search-member-section > form > label {
+    font-size: 1.1rem;
+    margin-left: 4px;
+    color: var(--text-color);
+}
+
+#search-code-field {
+    margin-top: 9px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    width: 100%;
+    gap: 11px;
+}
+
+#search-code-field .user-code {
+    padding-left: 18px;
+    border-radius: 5px;
+    border: var(--border-color) 1px solid;
+}
+
+#search-member-btn {
+    padding: 22px;
+    background-color: var(--dark-blue);
+    border: none;
+    height: 57px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--white-text-color);
     font-family: var(--body-font);
     border-radius: 5px;

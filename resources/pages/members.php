@@ -40,11 +40,22 @@
                 <form action="#">
                     <div id="user-code-field">
                         <label for="user-code">User Code</label>
-                        <input type="text" id="user-code" placeholder="E.g A0001">
+                        <input type="text" class="user-code" name="user-code" placeholder="E.g A0001">
                     </div>
-                    <button id="add-member-btn" type="submit">Add Member</button>
+                    <button id="add-member-btn" type="submit" name="submit" value="true">Add Member</button>
                 </form>
             </div>
+        </section>
+        <section id="search-member-section">
+            <form action="#">
+                <label for="search-member-input">Search Member</label>
+                <div id="search-code-field">
+                    <input type="text" class="user-code" name="user-code" placeholder="Name or user code">
+                    <button id="search-member-btn" type="submit" name="submit" value="true">
+                        <img src="../src/assets/images/Search.png" alt="search">
+                    </button>
+                </div>
+            </form>
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
