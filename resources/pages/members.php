@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/members.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div>
+                <p>AP</p>
+                <h1>ADMIN PANEL</h1>
+            </div>
+            <nav>
+                <div id="menu-icon">
+                    <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
+                </div>
+            </nav>
+        </header>
+        <aside id="navigation-pane">
+            <div>
+                <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
+                <div>
+                    <a href="#">Giving</a>
+                    <a href="#">Members</a>
+                </div>
+                <button>Logout</button>
+            </div>
+        </aside>
+        <section id="add-member-section">
+            <h2>Add member</h2>
+            <div id="add-member-form">
+                <form action="#">
+                    <div id="user-code-field">
+                        <label for="user-code">User Code</label>
+                        <input type="text" id="user-code" placeholder="E.g A0001">
+                    </div>
+                    <button id="add-member-btn" type="submit">Add Member</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="../src/js/toggleNavigation.js" type="module"></script>
+</body>
+</html>
