@@ -28,6 +28,7 @@
             <div>
                 <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
+                    <a href="./homepage.php">Home</a>
                     <a href="#">Giving</a>
                     <a href="#">Members</a>
                 </div>
@@ -39,8 +40,8 @@
             <div id="add-member-form">
                 <form action="#">
                     <div id="user-code-field">
-                        <label for="user-code">User Code</label>
-                        <input type="text" class="user-code" name="user-code" placeholder="E.g A0001">
+                        <label for="user-code-input">User Code</label>
+                        <input type="text" id="user-code-input" class="user-code" name="user-code" placeholder="E.g A0001">
                     </div>
                     <button id="add-member-btn" type="submit" name="submit" value="true">Add Member</button>
                 </form>
@@ -50,12 +51,113 @@
             <form action="#">
                 <label for="search-member-input">Search Member</label>
                 <div id="search-code-field">
-                    <input type="text" class="user-code" name="user-code" placeholder="Name or user code">
+                    <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Name or user code">
                     <button id="search-member-btn" type="submit" name="submit" value="true">
-                        <img src="../src/assets/images/Search.png" alt="search">
+                        <img src="../src/assets/images/Search.png" width="100%" height="100%" alt="search">
                     </button>
                 </div>
             </form>
+        </section>
+        <section id="members-section">  
+            <p>Members</p>
+            <div id="members">
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+                <div class="member">
+                    <p>Arranguez, Darryl Y.</p>
+                    <div class="arrow-icon">
+                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>

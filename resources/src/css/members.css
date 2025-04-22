@@ -19,14 +19,14 @@
 
 header,
 #add-member-section,
-#search-member-section {
+#search-member-section,
+#members-section {
     padding: 0 1.05rem;
 }
 
 .main {
-    padding: 23px 0 100px;
+    padding: 23px 0 50px;
     position: relative;
-    border: var(--border-1);
 }
 
 /* Navigation pane */
@@ -144,7 +144,7 @@ header > div > p {
 }
 
 #user-code-field > .user-code {
-    padding: 15px 18px;
+    padding: 12px 18px;
     width: 100%;
     box-sizing: border-box;
     border: var(--border-color) 1px solid;
@@ -171,6 +171,7 @@ header > div > p {
     color: var(--text-color);
 }
 
+
 #search-code-field {
     margin-top: 9px;
     display: grid;
@@ -190,12 +191,49 @@ header > div > p {
     padding: 22px;
     background-color: var(--dark-blue);
     border: none;
-    height: 57px;
-    width: 75px;
+    padding: 19px 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white-text-color);
     font-family: var(--body-font);
     border-radius: 5px;
+}
+
+#search-member-btn > img {
+    object-fit: fill;
+}
+
+/* Members section */
+#members-section {
+    font-family: var(--body-font);
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+#members-section > p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-left: 4px;
+    margin-bottom: 14px;
+}
+
+#members {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.member {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.arrow-icon {
+    transform: rotate(180deg);
 }
