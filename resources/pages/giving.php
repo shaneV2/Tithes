@@ -30,7 +30,7 @@
                 <div>
                     <a href="#">Home</a>
                     <a href="#">Giving</a>
-                    <a href="./members.php">Members</a>
+                    <a href="./date-list.php">date-list</a>
                 </div>
                 <button>Logout</button>
             </div>
@@ -93,6 +93,74 @@
                     </button>
                 </div>
             </form>
+        </section>
+        <section id="date-list-section">  
+            <p>Dates List</p>
+            <div id="date-list">
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
+                <div class="date">
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
+                </div>
         </section>
     </div>
     <script src="../src/js/selectDate.js" type="module"></script>

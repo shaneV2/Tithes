@@ -19,12 +19,13 @@
 
 header,
 #tithes-offering-section,
-#date-section {
+#date-section,
+#date-list-section {
     padding: 0 1.05rem;
 }
 
 .main {
-    padding: 23px 0 100px;
+    padding: 23px 0 50px;
     position: relative;
 }
 
@@ -125,7 +126,7 @@ select {
 }
 
 #tithes-offering-section > h2 {
-    margin-left: 9px;
+    margin-left: 8px;
     font-size: 28px;
     font-weight: 400;
 }
@@ -153,6 +154,10 @@ select {
     font-family: var(--body-font);
     color: var(--text-color);
     position: relative;
+}
+
+#date-section > p {
+    font-size: 1rem;
 }
 
 #months-options {
@@ -269,4 +274,44 @@ select {
     padding: 18px 9px;
     gap: .9rem;
     justify-content: space-between;
+}
+
+/* Date list section */
+#date-list-section {
+    font-family: var(--body-font);
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+#date-list-section > p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-left: 8px;
+    margin-bottom: 14px;
+}
+
+#date {
+
+}
+
+#date-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.date > a {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.arrow-icon {
+    transform: rotate(180deg);
 }
