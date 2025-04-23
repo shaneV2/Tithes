@@ -62,100 +62,52 @@
             <p>Members</p>
             <div id="members">
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
                 <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
-                </div>
-                <div class="member">
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="arrow-icon">
-                        <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                    </div>
+                    <a href="">
+                        <p>Arranguez, Darryl Y.</p>
+                        <div class="arrow-icon">
+                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>

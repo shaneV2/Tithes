@@ -226,10 +226,12 @@ header > div > p {
     overflow-y: auto;
 }
 
-.member {
+.member > a {
     display: flex;
     justify-content: space-between;
     padding: 22px 20px;
+    text-decoration: none;
+    color: var(--text-color);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
