@@ -30,11 +30,32 @@
                 <div>
                     <a href="#">Home</a>
                     <a href="#">Giving</a>
-                    <a href="./date-list.php">date-list</a>
+                    <a href="./members.php">Members</a>
                 </div>
                 <button>Logout</button>
             </div>
         </aside>
+        <section id="add-date-section">
+            <div class="modal">
+                <div id="add-date-header">
+                    <p>Add Date</p>
+                    <button><img src="../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
+                </div>
+                <div>
+                    <form action="">
+                        <div>
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" name="start-date" placeholder="Select Start Date">
+                        </div>
+                        <div>
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" name="end-date" placeholder="Select End Date">
+                        </div>
+                        <button id="add-date-submit-btn" name="submit" value="true">Add Date</button>
+                    </form>
+                </div>
+            </div>
+        </section>
         <section id="tithes-offering-section">
             <h2>Tithes and Offering</h2>
             <div id="add-date-btn">
@@ -95,7 +116,7 @@
             </form>
         </section>
         <section id="date-list-section">  
-            <p>Dates List</p>
+            <p>Date List</p>
             <div id="date-list">
                 <div class="date">
                     <a href="">

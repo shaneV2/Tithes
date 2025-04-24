@@ -116,6 +116,99 @@ select {
     text-overflow: '';
 }
 
+/* Add Date Section */
+#add-date-section {
+    position: absolute;
+    z-index: 100;
+    inset: 0;
+    height: 100lvh;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    margin: 0 16px;
+}
+
+#add-date-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-date-header > button {
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+
+#add-date-header > button > img {
+    background-color: white;
+}
+
+#add-date-section > div > div > p {
+    font-size: 28px;
+    font-family: var(--header-font);
+}
+
+#add-date-section > div,
+#start-date,
+#end-date,
+#add-date-submit-btn {
+    font-family: var(--body-font);
+    padding: 19px 21px;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+#start-date,
+#end-date {
+    border: var(--border-color) solid 1px;
+    outline: none;
+}
+
+#add-date-section > div {
+    border: var(--border-color) solid 1px;
+    /* margin: 38px 30px; */
+}
+
+#add-date-section > div > div {
+    margin-top: 9px;
+    padding: 0 10px;
+}
+
+#add-date-section > div > div > form {
+    display: flex;
+    
+    gap: 1.1rem;
+    flex-direction: column;
+}
+
+#add-date-section > div > div > form > div {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#add-date-submit-btn {
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 21px;
+    width: 100%;
+    background-color: var(--dark-green);
+    color: var(--white-text-color);
+    border: none;
+}
+
+
+
+
 /* Tithes and Offering section */
 #tithes-offering-section {
     display: flex;
@@ -288,10 +381,6 @@ select {
     color: var(--text-color);
     margin-left: 8px;
     margin-bottom: 14px;
-}
-
-#date {
-
 }
 
 #date-list {
