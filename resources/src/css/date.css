@@ -1,0 +1,196 @@
+:root {
+    /* Colors */
+    --light-green: #7FE77F;
+    --dark-green: #0E740E;
+    --dark-blue: #08053F;
+
+    --border-color: #BEBEBE;
+
+    --text-color: #363636;
+    --light-text-color: #545151;
+    --white-text-color: #E7E7E7;
+
+    --header-font: 'Oswald', sans-serif;
+    --body-font: 'Inter', sans-serif;
+
+    --border-1: 1px solid red;
+    --border-2: 1px solid green;
+}
+
+header,
+#total-tithes-offering-section,
+#search-member-section,
+#members-section {
+    padding: 0 1.05rem;
+}
+
+.main {
+    padding: 23px 0 50px;
+    position: relative;
+}
+
+/* Navigation pane */
+#menu-icon {
+    display: flex;
+    color: var(--text-color);
+    margin-top: 7px;
+}
+
+#close-menu-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+#navigation-pane {
+    color: var(--text-color);
+    z-index: 100;
+    box-sizing: border-box;
+    height: 100lvh;
+    font-family: var(--body-font);
+    background-color: white;
+    padding: 39px 32px;
+    position: absolute;
+    inset: 0;
+}
+
+#navigation-pane > div {
+    display: grid;
+    gap: 74px;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+#navigation-pane > div >  div:nth-child(2) {
+    padding: 0 8px;
+    overflow-y: auto;
+    max-height: 380px;
+    display: flex;
+    margin: 0 8px;
+    flex-direction: column;
+    text-align: center;
+}
+
+#navigation-pane > div> div:nth-child(2) > a {
+    padding: 26px 134px;
+    border-top: var(--border-color) 1px solid;
+    text-decoration: none;
+    color: inherit;
+}
+
+#navigation-pane > div > div:nth-child(2) > a:last-child {
+    border-bottom: var(--border-color) 1px solid;
+}
+
+#navigation-pane > div > button {
+    padding: 26px 131px;
+    font-size: 1.4rem;
+    font-family: var(--body-font);
+    border-radius: 20px;
+    border: var(--border-color) 1px solid;
+}
+
+
+header,
+header > div {
+    justify-content: space-between;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    font-family: var(--header-font);
+}
+
+header > div > p {
+    padding: 1.3rem 1.3rem;
+    background-color: var(--dark-green);
+    border-radius: 100%;
+    color: var(--white-text-color);
+    font-family: var(--body-font);
+    font-weight: 700;
+}
+
+/* Total tithes and Offering section */
+#total-tithes-offering-section {
+    display: flex;
+    margin-top: 39px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#total-tithes-offering-section > p {
+    font-size: 28px;
+    margin-left: 3px;
+    font-size: 1.8rem;
+    font-family: var(--header-font);
+}
+
+#tithes-table {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    width: 100%;
+    border: black 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#tithes-table td {
+    border: black 1px solid;
+}
+
+#tithes-table tr:last-child td:nth-child(2) {
+    font-weight: 600;
+}
+
+#add-tithes-btn {
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    margin-top: 5px;
+    background-color: var(--dark-green);
+    border: none;
+}
+
+#add-tithes-btn > a {
+    width: 100%;
+    color: var(--white-text-color);
+    padding: 22px;
+    text-decoration: none;
+    font-family: var(--body-font);
+}
+
+/* Members section */
+#members-section {
+    font-family: var(--body-font);
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+#members-section > p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-left: 4px;
+    margin-bottom: 14px;
+}
+
+#members {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.member > a {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.arrow-icon {
+    transform: rotate(180deg);
+}

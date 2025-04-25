@@ -28,7 +28,7 @@
             <div>
                 <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
-                    <a href="#">Home</a>
+                    <a href="./homepage.php">Home</a>
                     <a href="#">Giving</a>
                     <a href="./members.php">Members</a>
                 </div>
@@ -120,7 +120,7 @@
             <div id="date-list">
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
@@ -152,7 +152,7 @@
                 </div>
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
@@ -160,28 +160,13 @@
                 </div>
                 <div class="date">
                     <a href="">
-                        <p>Arranguez, Darryl Y.</p>
+                        <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
                         </div>
                     </a>
                 </div>
-                <div class="date">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="date">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
+            </div>
         </section>
     </div>
     <script src="../src/js/selectDate.js" type="module"></script>

@@ -29,7 +29,7 @@
                 <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
                     <a href="#">Home</a>
-                    <a href="#">Giving</a>
+                    <a href="./giving.php">Giving</a>
                     <a href="./members.php">Members</a>
                 </div>
                 <button>Logout</button>

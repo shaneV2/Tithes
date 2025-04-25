@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../src/css/main.css">
-    <link rel="stylesheet" href="../src/css/members.css">
+    <link rel="stylesheet" href="../src/css/date.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,28 +35,63 @@
                 <button>Logout</button>
             </div>
         </aside>
-        <section id="add-member-section">
-            <h2>Add member</h2>
-            <div id="add-member-form">
-                <form action="#">
-                    <div id="user-code-field">
-                        <label for="user-code-input">User Code</label>
-                        <input type="text" id="user-code-input" class="user-code" name="user-code" placeholder="E.g A0001">
-                    </div>
-                    <button id="add-member-btn" type="submit" name="submit" value="true">Add Member</button>
-                </form>
-            </div>
-        </section>
-        <section id="search-member-section">
-            <form action="#">
-                <label for="search-member-input">Search Member</label>
-                <div id="search-code-field">
-                    <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Name or user code">
-                    <button id="search-member-btn" type="submit" name="submit" value="true">
-                        <img src="../src/assets/images/Search.png" width="100%" height="100%" alt="search">
-                    </button>
-                </div>
-            </form>
+        <section id="total-tithes-offering-section">
+            <p>March 20, 2025 - April 6, 2025</p>
+            <table id="tithes-table">
+                <tr>
+                    <td>1000</td>
+                    <td>2</td>
+                    <td>2,000</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>2</td>
+                    <td>1,000</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>2</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>2</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>4,000</td>
+                </tr>
+            </table>
+            <button id="add-tithes-btn">
+                <a href="">Add Tithes and Offerings</a>
+            </button>
         </section>
         <section id="members-section">  
             <p>Members</p>
