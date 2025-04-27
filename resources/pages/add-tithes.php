@@ -37,7 +37,7 @@
         </aside>
         <section id="add-tithes-section">
             <div id="back-btn">
-                <a href="./giving.php">Back</a>
+                <a href="./date.php">Back</a>
             </div>
             <p>Add Tithes and Offerings</p>
             <form id="add-tithes-form" action="">
