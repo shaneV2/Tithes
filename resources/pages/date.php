@@ -75,6 +75,28 @@
                 </table>
             </div>
         </section>
+        <section id="shares-modal">
+            <div id="modal">
+                <div>
+                    <p>Shares</p>
+                    <div class="close-btn">
+                        <img src="../src/assets/images/close.png" height="100%" width="100%" alt="">
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pastors</th>
+                        <th>Pastor Share</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>478</td>
+                        <td>1915</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
         <section id="total-tithes-offering-section">
             <div id="back-btn">
                 <a href="./giving.php">Back</a>
@@ -135,6 +157,9 @@
             <button id="add-tithes-btn">
                 <a href="./add-tithes.php">Add Tithes and Offerings</a>
             </button>
+            <button id="view-shares-btn">
+                <a href="">View shares</a>
+            </butti>
         </section>
         <section id="members-section">  
             <p>Members</p>
