@@ -206,9 +206,6 @@ select {
     border: none;
 }
 
-
-
-
 /* Tithes and Offering section */
 #tithes-offering-section {
     display: flex;
@@ -250,7 +247,7 @@ select {
 }
 
 #date-section > p {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 #months-options {
@@ -376,8 +373,12 @@ select {
     color: var(--text-color);
 }
 
-#date-list-section > p {
+#date > a > p {
     font-size: 1rem;
+}
+
+#date-list-section > p {
+    font-size: 1.1rem;
     color: var(--text-color);
     margin-left: 8px;
     margin-bottom: 14px;

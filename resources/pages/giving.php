@@ -119,7 +119,7 @@
             <p>Date List</p>
             <div id="date-list">
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
@@ -127,7 +127,7 @@
                     </a>
                 </div>
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
@@ -135,7 +135,7 @@
                     </a>
                 </div>
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
@@ -143,7 +143,7 @@
                     </a>
                 </div>
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
@@ -151,7 +151,7 @@
                     </a>
                 </div>
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
@@ -159,7 +159,7 @@
                     </a>
                 </div>
                 <div class="date">
-                    <a href="">
+                    <a href="./add-tithes.php">
                         <p>March, 20, 2025 - April, 6, 2025</p>
                         <div class="arrow-icon">
                             <img src="../src/assets/images/arrow_back.png" alt="arrow">
