@@ -42,7 +42,7 @@
                     <button id="close-btn"><img src="../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
                 </div>
                 <div>
-                    <form action="">
+                    <form action="./queries.php?action=add-date" method="post">
                         <div>
                             <label for="start-date">Start Date</label>
                             <input type="date" id="start-date" name="start-date" placeholder="Select Start Date">
