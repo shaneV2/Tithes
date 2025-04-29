@@ -39,7 +39,7 @@
             <div class="modal">
                 <div id="add-date-header">
                     <p>Add Date</p>
-                    <button><img src="../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
+                    <button id="close-btn"><img src="../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
                 </div>
                 <div>
                     <form action="">
@@ -172,6 +172,7 @@
     <script src="../src/js/selectDate.js" type="module"></script>
     <script src="../src/js/selectMonth.js" type="module"></script>
     <script src="../src/js/selectYear.js" type="module"></script>
+    <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
 </body>
 </html>
