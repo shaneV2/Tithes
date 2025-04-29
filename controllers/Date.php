@@ -10,9 +10,9 @@
             $conn->close();
         }
         
-        public function getDate(){
+        public function getDates(){
             $conn = $this->getConnection();
-            $query = "select * from dates";
+            $query = "select * from dates order by id desc";
             $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result) == 0){

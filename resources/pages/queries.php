@@ -20,8 +20,9 @@
         $action = $_GET['action'];
         
         switch($action) {
-            case 'get-date':
-                return "this is a test for getting the date";
+            case 'get-dates':
+                $date->getDates();
+                break;
         }
     }
 

@@ -126,46 +126,6 @@
                         </div>
                     </a>
                 </div>
-                <div class="date">
-                    <a href="./date.php">
-                        <p>March, 20, 2025 - April, 6, 2025</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="date">
-                    <a href="./date.php">
-                        <p>March, 20, 2025 - April, 6, 2025</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="date">
-                    <a href="./date.php">
-                        <p>March, 20, 2025 - April, 6, 2025</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="date">
-                    <a href="./date.php">
-                        <p>March, 20, 2025 - April, 6, 2025</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="date">
-                    <a href="./date.php">
-                        <p>March, 20, 2025 - April, 6, 2025</p>
-                        <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
-                        </div>
-                    </a>
-                </div>
             </div>
         </section>
     </div>
@@ -174,5 +134,6 @@
     <script src="../src/js/selectYear.js" type="module"></script>
     <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../src/js/getDates.js"></script>
 </body>
 </html>
