@@ -13,9 +13,16 @@
                 $end_date = $_POST['end-date'];        
                 $date->createDate($start_date, $end_date);
                 header("Location: ./giving.php");
-                exit();     
+                exit();
         }
 
+    }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){
+        $action = $_GET['action'];
+        
+        switch($action) {
+            case 'get-date':
+                return "this is a test for getting the date";
+        }
     }
 
 ?>
