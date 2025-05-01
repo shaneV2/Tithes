@@ -101,7 +101,7 @@
             <div id="back-btn">
                 <a href="./giving.php">Back</a>
             </div>
-            <p>March 20, 2025 - April 6, 2025</p>
+            <p><?php echo $_GET['start_date'];?> - <?php echo $_GET['end_date'];?></p>
             <table id="tithes-table">
                 <tr>
                     <td>1000</td>

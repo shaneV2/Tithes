@@ -16,16 +16,21 @@
             $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result) == 0){
-                return "No date added yet";
+                echo '<div class="date">
+                        <p style="text-align: center; margin-top:20px;">No date added yet.</p>
+                    </div>';
             }else {
                 while ($row = mysqli_fetch_assoc($result)){
                     $start_date = new DateTime($row['start_date']);
                     $end_date = new DateTime($row['end_date']);
 
-                    $formatted = $start_date->format("F, j, Y") . " - " . $end_date->format("F, j, Y");
+                    $formatted_sd = $start_date->format("F j, Y"); 
+                    $formatted_ed = $end_date->format("F j, Y"); 
+
+                    $formatted = $formatted_sd . " - " . $formatted_ed;
 
                     echo '<div class="date">
-                            <a href="./date.php">
+                            <a href="./date.php?start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
                                 <p>'. $formatted .'</p>
                                 <div class="arrow-icon">
                                     <img src="../src/assets/images/arrow_back.png" alt="arrow">
