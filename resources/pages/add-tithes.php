@@ -1,3 +1,9 @@
+<?php 
+    $date_id = $_GET['d_id'];
+    $start_date = $_GET['start_date'];
+    $end_date = $_GET['end_date'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,30 +46,35 @@
                 <a href="./date.php">Back</a>
             </div>
             <p>Add Tithes and Offerings</p>
-            <form id="add-tithes-form" action="">
+            <form id="add-tithes-form" action="./queries.php?action=add-user-offer" method="post">
+                <div>
+                    <input style="display: none;" type="text" name="date_id" value="<?php echo $date_id;?>">
+                    <input style="display: none;" type="text" name="start_date" value="<?php echo $start_date;?>">
+                    <input style="display: none;" type="text" name="end_date" value="<?php echo $end_date;?>">
+                </div>
                 <div>
                     <label for="">Name</label>
-                    <input type="text">
+                    <input type="text" name="username">
                 </div>
                 <div>
                     <label for="">Tithes</label>
-                    <input type="number">
+                    <input type="number" name="tithes">
                 </div>
                 <div>
                     <label for="">Mission</label>
-                    <input type="number">
+                    <input type="number" name="mission">
                 </div>
                 <div>
                     <label for="">OMG</label>
-                    <input type="number">
+                    <input type="number" name="omg">
                 </div>
                 <div>
                     <label for="">Pledges</label>
-                    <input type="number">
+                    <input type="number" name="pledges">
                 </div>
                 <div>
                     <label for="">Donation</label>
-                    <input type="number">
+                    <input type="number" name="donation">
                 </div>
                 <div id="add-tithes-btn">
                     <div>

@@ -1,18 +1,38 @@
 <?php
     require '../../controllers/Database.php';
     require '../../controllers/Date.php';
+    require '../../controllers/Offerings.php';
 
     $date = new Date();
+    $offerings = new Offerings();
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $action = $_GET['action'];
         
         switch($action){
             case 'add-date':
-                $start_date = $_POST['start-date'];        
-                $end_date = $_POST['end-date'];        
+                $start_date = $_GET['start-date'];        
+                $end_date = $_GET['end-date'];        
                 $date->createDate($start_date, $end_date);
                 header("Location: ./giving.php");
+                exit();
+            
+            case 'add-user-offer':
+                $start_date = $_POST['start_date'];
+                $end_date = $_POST['end_date'];
+
+                $tithes = empty($_POST['tithes']) ? 0 : $_POST['tithes'];
+                $mission = empty($_POST['mission']) ? 0 : $_POST['mission'];
+                $omg = empty($_POST['omg']) ? 0 : $_POST['omg'];
+                $pledges = empty($_POST['pledges']) ? 0 : $_POST['pledges'];
+                $donation = empty($_POST['donation']) ? 0 : $_POST['donation'];
+                
+                $username = $_POST['username'];
+                $tithes_and_offerings = [$tithes, $mission, $omg, $pledges, $donation];
+                $date_id = $_POST['date_id'];
+
+                $offerings->addUserOffering($username, $date_id, $tithes_and_offerings);
+                header("Location: date.php?d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date);
                 exit();
         }
 

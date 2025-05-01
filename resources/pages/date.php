@@ -1,3 +1,9 @@
+<?php 
+    $date_id = $_GET['d_id'];
+    $start_date = $_GET['start_date'];
+    $end_date = $_GET['end_date'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +107,7 @@
             <div id="back-btn">
                 <a href="./giving.php">Back</a>
             </div>
-            <p><?php echo $_GET['start_date'];?> - <?php echo $_GET['end_date'];?></p>
+            <p><?php echo $start_date . " - " . $end_date;?></p>
             <table id="tithes-table">
                 <tr>
                     <td>1000</td>
@@ -155,7 +161,7 @@
                 </tr>
             </table>
             <button id="add-tithes-btn">
-                <a href="./add-tithes.php">Add Tithes and Offerings</a>
+                <a href="./add-tithes.php?<?php echo "d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date; ?>">Add Tithes and Offerings</a>
             </button>
             <button id="view-shares-btn">
                 <a href="">View shares</a>

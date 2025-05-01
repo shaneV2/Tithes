@@ -21,6 +21,7 @@
                     </div>';
             }else {
                 while ($row = mysqli_fetch_assoc($result)){
+                    $date_id = $row['id'];
                     $start_date = new DateTime($row['start_date']);
                     $end_date = new DateTime($row['end_date']);
 
@@ -30,7 +31,7 @@
                     $formatted = $formatted_sd . " - " . $formatted_ed;
 
                     echo '<div class="date">
-                            <a href="./date.php?start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
+                            <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
                                 <p>'. $formatted .'</p>
                                 <div class="arrow-icon">
                                     <img src="../src/assets/images/arrow_back.png" alt="arrow">
