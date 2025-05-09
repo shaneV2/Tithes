@@ -124,7 +124,8 @@ select {
 #back-btn {
     text-align: start;
     display: flex;
-    margin-bottom: 10px;
+    margin-top: 39px;
+    margin-bottom: 20px;
 }
 
 #back-btn > a {
@@ -155,7 +156,19 @@ select {
     flex-flow: column;
 }
 
-#add-tithes-form > div > label {
+#add-tithes-form > #offerings-input-field{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+#add-tithes-form > #offerings-input-field > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#add-tithes-form > #offerings-input-field > div > label {
     margin-left: 2px;
 }
 
@@ -173,7 +186,23 @@ select {
 }
 
 #add-tithes-form > :first-child {
-    margin-top: 16px;
+    margin-top: 10px;
+}
+
+#add-tithes-form > #digits {
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+#add-tithes-form > #digits > div {
+    display: flex;
+    gap: 5px;
+}
+
+#digits input[type="number"]::-webkit-inner-spin-button,
+#digits input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
 }
 
 #add-tithes-btn > div {

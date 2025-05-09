@@ -229,6 +229,7 @@ header > div > p {
 .member > a {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 22px 20px;
     text-decoration: none;
     color: var(--text-color);
@@ -238,4 +239,9 @@ header > div > p {
 
 .arrow-icon {
     transform: rotate(180deg);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

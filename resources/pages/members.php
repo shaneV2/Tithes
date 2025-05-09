@@ -65,7 +65,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -73,7 +73,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -81,7 +81,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -89,7 +89,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -97,7 +97,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -105,7 +105,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>

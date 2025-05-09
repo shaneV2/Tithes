@@ -13,7 +13,7 @@
                             <a href="">
                                 <p>'. $row['user_name'] .'</p>
                                 <div class="arrow-icon">
-                                    <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                                    <img src="../src/assets/svg/ellipses.svg" height="100%" width="100%" alt="arrow">
                                 </div>
                             </a>
                         </div>';

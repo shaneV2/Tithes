@@ -34,7 +34,7 @@
                             <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
                                 <p>'. $formatted .'</p>
                                 <div class="arrow-icon">
-                                    <img src="../src/assets/images/arrow_back.png" alt="arrow">
+                                    <img src="../src/assets/svg/ellipses.svg" height="100%" width="100%" alt="arrow">
                                 </div>
                             </a>
                         </div>';

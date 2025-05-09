@@ -43,7 +43,7 @@
         </aside>
         <section id="add-tithes-section">
             <div id="back-btn">
-                <a href="./date.php">Back</a>
+                <a href="./date.php?<?php echo "d_id=" . $date_id ."&start_date=". $start_date ."&end_date=" .$end_date;?>">Back</a>
             </div>
             <p>Add Tithes and Offerings</p>
             <form id="add-tithes-form" action="./queries.php?action=add-user-offer" method="post">
@@ -52,29 +52,71 @@
                     <input style="display: none;" type="text" name="start_date" value="<?php echo $start_date;?>">
                     <input style="display: none;" type="text" name="end_date" value="<?php echo $end_date;?>">
                 </div>
-                <div>
-                    <label for="">Name</label>
-                    <input type="text" name="username">
+                <div id="offerings-input-field">
+                    <div>
+                        <label for="">Name</label>
+                        <input type="text" name="username">
+                    </div>
+                    <div>
+                        <label for="">Tithes</label>
+                        <input type="number" name="tithes">
+                    </div>
+                    <div>
+                        <label for="">Mission</label>
+                        <input type="number" name="mission">
+                    </div>
+                    <div>
+                        <label for="">OMG</label>
+                        <input type="number" name="omg">
+                    </div>
+                    <div>
+                        <label for="">Pledges</label>
+                        <input type="number" name="pledges">
+                    </div>
+                    <div>
+                        <label for="">Donation</label>
+                        <input type="number" name="donation">
+                    </div>
                 </div>
-                <div>
-                    <label for="">Tithes</label>
-                    <input type="number" name="tithes">
-                </div>
-                <div>
-                    <label for="">Mission</label>
-                    <input type="number" name="mission">
-                </div>
-                <div>
-                    <label for="">OMG</label>
-                    <input type="number" name="omg">
-                </div>
-                <div>
-                    <label for="">Pledges</label>
-                    <input type="number" name="pledges">
-                </div>
-                <div>
-                    <label for="">Donation</label>
-                    <input type="number" name="donation">
+                <div id="digits">
+                    <div>
+                        <div>
+                            <label for="">1000s</label>
+                            <input type="number" name="1000s">
+                        </div>
+                        <div>
+                            <label for="">500s</label>
+                            <input type="number" name="500s">
+                        </div>
+                        <div>
+                            <label for="">200s</label>
+                            <input type="number" name="200s">
+                        </div>
+                        <div>
+                            <label for="">100s</label>
+                            <input type="number" name="100s">
+                        </div>
+                        <div>
+                            <label for="">50s</label>
+                            <input type="number" name="50s">
+                        </div>
+                        <div>
+                            <label for="">20s</label>
+                            <input type="number" name="20s">
+                        </div>
+                        <div>
+                            <label for="">10s</label>
+                            <input type="number" name="10s">
+                        </div>
+                        <div>
+                            <label for="">5s</label>
+                            <input type="number" name="5s">
+                        </div>
+                        <div>
+                            <label for="">1s</label>
+                            <input type="number" name="1s">
+                        </div>
+                    </div>
                 </div>
                 <div id="add-tithes-btn">
                     <div>

@@ -170,7 +170,6 @@
         <section id="members-section">  
             <p>Members</p>
             <div id="members">
-                
             </div>
         </section>
     </div>
