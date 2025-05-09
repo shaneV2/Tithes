@@ -1,9 +1,11 @@
 <?php
     require '../../controllers/Database.php';
     require '../../controllers/Date.php';
+    require '../../controllers/Members.php';
     require '../../controllers/Offerings.php';
 
     $date = new Date();
+    $members = new Members();
     $offerings = new Offerings();
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -11,8 +13,8 @@
         
         switch($action){
             case 'add-date':
-                $start_date = $_GET['start-date'];        
-                $end_date = $_GET['end-date'];        
+                $start_date = $_POST['start-date'];        
+                $end_date = $_POST['end-date'];        
                 $date->createDate($start_date, $end_date);
                 header("Location: ./giving.php");
                 exit();
@@ -38,10 +40,15 @@
 
     }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){
         $action = $_GET['action'];
+        $date_id = $_GET['d_id'] ?? null ;
         
         switch($action) {
             case 'get-dates':
                 $date->getDates();
+                break;
+
+            case 'get-members-based-on-date':
+                $members->getMembersBasedOnDate($date_id);
                 break;
         }
     }

@@ -86,9 +86,6 @@
             </form>
         </section>
     </div>
-    <script src="../src/js/selectDate.js" type="module"></script>
-    <script src="../src/js/selectMonth.js" type="module"></script>
-    <script src="../src/js/selectYear.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
 </body>
 </html>
