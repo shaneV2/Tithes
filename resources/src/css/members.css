@@ -238,7 +238,7 @@ header > div > p {
 }
 
 .arrow-icon {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
     width: 30px;
     height: 30px;
     display: flex;

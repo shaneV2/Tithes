@@ -36,7 +36,7 @@
                 <div>
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
-                    <a href="#">Members</a>
+                    <a href="./members.php">Members</a>
                 </div>
                 <button>Logout</button>
             </div>

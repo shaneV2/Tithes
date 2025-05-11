@@ -31,9 +31,10 @@
                 
                 $username = $_POST['username'];
                 $tithes_and_offerings = [$tithes, $mission, $omg, $pledges, $donation];
+                $denominations = $_POST['denominations'];
                 $date_id = $_POST['date_id'];
 
-                $offerings->addUserOffering($username, $date_id, $tithes_and_offerings);
+                $offerings->addUserOffering($username, $date_id, $tithes_and_offerings, $denominations);
                 header("Location: date.php?d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date);
                 exit();
         }

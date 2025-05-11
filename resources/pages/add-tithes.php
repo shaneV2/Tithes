@@ -54,67 +54,67 @@
                 </div>
                 <div id="offerings-input-field">
                     <div>
-                        <label for="">Name</label>
-                        <input type="text" name="username">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="username" required>
                     </div>
                     <div>
-                        <label for="">Tithes</label>
-                        <input type="number" name="tithes">
+                        <label for="tithes">Tithes</label>
+                        <input id="tithes" type="number" name="tithes">
                     </div>
                     <div>
-                        <label for="">Mission</label>
-                        <input type="number" name="mission">
+                        <label for="mission">Mission</label>
+                        <input id="mission" type="number" name="mission">
                     </div>
                     <div>
-                        <label for="">OMG</label>
-                        <input type="number" name="omg">
+                        <label for="omg">OMG</label>
+                        <input id="omg" type="number" name="omg">
                     </div>
                     <div>
-                        <label for="">Pledges</label>
-                        <input type="number" name="pledges">
+                        <label for="pledges">Pledges</label>
+                        <input id="pledges" type="number" name="pledges">
                     </div>
                     <div>
-                        <label for="">Donation</label>
-                        <input type="number" name="donation">
+                        <label for="donation">Donation</label>
+                        <input id="donation" type="number" name="donation">
                     </div>
                 </div>
                 <div id="digits">
                     <div>
                         <div>
-                            <label for="">1000s</label>
-                            <input type="number" name="1000s">
+                            <label for="1000">1000s</label>
+                            <input id="1000" type="number" name="denominations[1000]">
                         </div>
                         <div>
-                            <label for="">500s</label>
-                            <input type="number" name="500s">
+                            <label for="500">500s</label>
+                            <input id="500" type="number" name="denominations[500]">
                         </div>
                         <div>
-                            <label for="">200s</label>
-                            <input type="number" name="200s">
+                            <label for="200">200s</label>
+                            <input id="200" type="number" name="denominations[200]">
                         </div>
                         <div>
-                            <label for="">100s</label>
-                            <input type="number" name="100s">
+                            <label for="100">100s</label>
+                            <input id="100" type="number" name="denominations[100]">
                         </div>
                         <div>
-                            <label for="">50s</label>
-                            <input type="number" name="50s">
+                            <label for="50">50s</label>
+                            <input id="50" type="number" name="denominations[50]">
                         </div>
                         <div>
-                            <label for="">20s</label>
-                            <input type="number" name="20s">
+                            <label for="20">20s</label>
+                            <input id="20" type="number" name="denominations[20]">
                         </div>
                         <div>
-                            <label for="">10s</label>
-                            <input type="number" name="10s">
+                            <label for="10">10s</label>
+                            <input id="10" type="number" name="denominations[10]">
                         </div>
                         <div>
-                            <label for="">5s</label>
-                            <input type="number" name="5s">
+                            <label for="5">5s</label>
+                            <input id="5" type="number" name="denominations[5]">
                         </div>
                         <div>
-                            <label for="">1s</label>
-                            <input type="number" name="1s">
+                            <label for="1">1s</label>
+                            <input id="1" type="number" name="denominations[1]">
                         </div>
                     </div>
                 </div>
