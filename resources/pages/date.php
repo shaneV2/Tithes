@@ -82,25 +82,13 @@
             </div>
         </section>
         <section id="shares-modal">
-            <div id="modal">
+            <div id="inner-modal">
                 <div>
                     <p>Shares</p>
-                    <div class="close-btn">
+                    <div id="shares-close-btn">
                         <img src="../src/assets/images/close.png" height="100%" width="100%" alt="">
                     </div>
                 </div>
-                <table>
-                    <tr>
-                        <th>Pastors</th>
-                        <th>Pastor Share</th>
-                        <th>Total</th>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>478</td>
-                        <td>1915</td>
-                    </tr>
-                </table>
             </div>
         </section>
         <section id="total-tithes-offering-section">
@@ -164,7 +152,7 @@
                 <a href="./add-tithes.php?<?php echo "d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date; ?>">Add Tithes and Offerings</a>
             </button>
             <button id="view-shares-btn">
-                <a href="">View shares</a>
+                View shares
             </butti>
         </section>
         <section id="members-section">  
@@ -175,5 +163,6 @@
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
     <script src="../src/js/members.js" type="module"></script>
+    <script src="../src/js/viewShares.js" type="module"></script>
 </body>
 </html>

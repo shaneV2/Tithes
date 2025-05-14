@@ -134,8 +134,8 @@ header > div > p {
     backdrop-filter: blur(8px);
 }
 
-#user-offer-modal  > #modal,
-#shares-modal  > #modal {
+#user-offer-modal  > #inner-modal,
+#shares-modal  > #inner-modal {
     margin-top: 30%;
     height: fit-content;
     width: 100%;
@@ -145,31 +145,37 @@ header > div > p {
     background-color: white;
 }
 
-#modal > div {
+#inner-modal > div {
     display: flex;
     justify-content: space-between;
 }
 
+#shares-close-btn {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
 .close-btn {
     height: 30px;
     width: 30px;
+    cursor: pointer;
 }
 
-#user-offer-modal  > #modal > div > p,
-#shares-modal  > #modal > div > p {
+#user-offer-modal  > #inner-modal > div > p,
+#shares-modal  > #inner-modal > div > p {
     font-family: var(--header-font);
     font-size: 28px;
 }
 
-#user-offer-modal  > #modal > table,
-#shares-modal  > #modal > table {
+#user-offer-modal  > #inner-modal > table,
+#shares-modal  > #inner-modal > table {
     font-family: var(--body-font);
     width: 100%;
     border-collapse: collapse;
 }
 
-#modal td,
-#modal th {
+#inner-modal td,
+#inner-modal th {
     text-align: center;
     border: black 1px solid;
     padding: 10px;
@@ -245,11 +251,10 @@ header > div > p {
     margin-top: 8px;
     background-color: white;
     text-align: end;
-    border: none;
-}
-
-#view-shares-btn > a {
     color: var(--text-color);
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Members section */

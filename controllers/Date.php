@@ -43,5 +43,43 @@
             
             $conn->close();
         }
+
+        public function getShares($date_id){
+            $conn = $this->getConnection();
+
+            $query = "select 
+                        SUM(tithes) as tithes_total,
+                        SUM(mission) as mission_total,
+                        SUM(omg) as omg_total,
+                        SUM(pledges) as pledges_total,
+                        SUM(donation) as donation_total
+                        from user_offers";
+
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $total_share = 0;
+            $pastor_share = 0;
+            
+            if (mysqli_num_rows($result) > 0){
+                $row = mysqli_fetch_assoc($result);
+                
+                $total_share = $row['tithes_total'] + $row['mission_total'] + $row['omg_total'] + $row['pledges_total'] + $row['donation_total'];
+                $pastor_share = $total_share / 4;
+            }   
+            echo '<table>
+                    <tr>
+                        <th>Pastors</th>
+                        <th>Pastor Share</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>'. $pastor_share .'</td>
+                        <td>'. $total_share .'</td>
+                    </tr>
+                </table>';
+        }
     }
 ?>

@@ -51,6 +51,10 @@
             case 'get-members-based-on-date':
                 $members->getMembersBasedOnDate($date_id);
                 break;
+            
+            case 'view-shares':
+                $date->getShares($date_id);
+                break;
         }
     }
 

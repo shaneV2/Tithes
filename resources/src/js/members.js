@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function (){
     const queryString = window.location.search;
     const URLparams = new URLSearchParams(queryString);
     const date_id = URLparams.get("d_id");
-    console.log("date id: " + date_id)
-
+    
     getMembersBasedOnDate(date_id);
 })
