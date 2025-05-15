@@ -44,6 +44,119 @@
             $conn->close();
         }
 
+        public function getDenominationsTotal($date_id){
+            $conn = $this->getConnection();
+
+            $query = "select 
+                        SUM(thousands) as thousands, 
+                        SUM(five_hundreds) as five_hundreds,
+                        SUM(two_hundreds) as two_hundreds,
+                        SUM(hundreds) as hundreds,
+                        SUM(fifties) as fifties,
+                        SUM(twenties) as twenties,
+                        SUM(tens) as tens,
+                        SUM(fives) as fives,
+                        SUM(ones) as ones
+                        FROM denominations
+                        WHERE date_id = ?";
+
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param('i', $date_id);
+            $stmt->execute();
+
+            // Total number of each denonimation
+            $thousands = 0;
+            $five_hundreds = 0;
+            $two_hundreds = 0;
+            $hundreds = 0;
+            $fifties = 0;
+            $twenties = 0;
+            $tens = 0;
+            $fives = 0;
+            $ones = 0;
+
+            $result = $stmt->get_result();
+            if (mysqli_num_rows($result) > 0){
+                $row = mysqli_fetch_assoc($result);
+                $thousands = $row['thousands'];
+                $five_hundreds = $row['five_hundreds'];
+                $two_hundreds = $row['two_hundreds'];
+                $hundreds = $row['hundreds'];
+                $fifties = $row['fifties'];
+                $twenties = $row['twenties'];
+                $tens = $row['tens'];
+                $fives = $row['fives'];
+                $ones = $row['ones'];
+            }  
+
+            // Total
+            $thousands_total = $thousands * 1000;
+            $five_hundreds_total = $five_hundreds * 500;
+            $two_hundreds_total = $two_hundreds * 200;
+            $hundreds_total = $hundreds * 100;
+            $fifties_total = $fifties * 50;
+            $twenties_total = $twenties * 20;
+            $tens_total = $tens * 10;
+            $fives_total = $fives * 5;
+            $ones_total = $ones * 1;
+
+            $total = $thousands_total + $five_hundreds_total + $two_hundreds_total + $hundreds_total + $fifties_total + $twenties_total + $tens_total + $fives_total + $ones_total;
+
+            echo '<tr>
+                    <td>1000</td>
+                    <td>'. $thousands .'</td>
+                    <td>'. $thousands_total .'</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>'. $five_hundreds .'</td>
+                    <td>'. $five_hundreds_total .'</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>'. $two_hundreds .'</td>
+                    <td>'. $two_hundreds_total .'</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>'. $hundreds .'</td>
+                    <td>'. $hundreds_total .'</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>'. $fifties .'</td>
+                    <td>'. $fifties_total .'</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>'. $twenties .'</td>
+                    <td>'. $twenties_total .'</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>'. $tens .'</td>
+                    <td>'. $tens_total .'</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>'. $fives .'</td>
+                    <td>'. $fives_total .'</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>'. $ones .'</td>
+                    <td>'. $ones_total .'</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>'. $total .'</td>
+                </tr>';
+            
+            $conn->close();
+            $stmt->close();
+        }
+
         public function getShares($date_id){
             $conn = $this->getConnection();
 
@@ -81,6 +194,9 @@
                         <td>'. $total_share .'</td>
                     </tr>
                 </table>';
+
+            $conn->close();
+            $stmt->close();
         }
     }
 ?>

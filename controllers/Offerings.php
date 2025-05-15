@@ -20,11 +20,12 @@
             $fives = !empty($denominations['5']) ? $denominations['5'] : 0;
             $ones = !empty($denominations['1']) ? $denominations['1'] : 0;
 
-            $stmt = $conn->prepare("insert into denominations(`1000`, `500`, `200`, `100`, `50`, `20`, `10`, `5`, `1`, `date_id`) values(?,?,?,?,?,?,?,?,?,?);");
+            $stmt = $conn->prepare("insert into denominations(`thousands`, `five_hundreds`, `two_hundreds`, `hundreds`, `fifties`, `twenties`, `tens`, `fives`, `ones`, `date_id`) values(?,?,?,?,?,?,?,?,?,?);");
             $stmt->bind_param("iiiiiiiiis", $thousands, $five_hundreds, $two_hundreds, $hundreds, $fifties, $twenties, $tens, $fives, $ones, $date_id);
             $stmt->execute();
 
             $conn->close();
+            $stmt->close();
         }
     }
 ?>
