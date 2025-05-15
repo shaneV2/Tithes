@@ -53,9 +53,10 @@
                         SUM(omg) as omg_total,
                         SUM(pledges) as pledges_total,
                         SUM(donation) as donation_total
-                        from user_offers";
+                        from user_offers where date_id = ?";
 
             $stmt = $conn->prepare($query);
+            $stmt->bind_param('i', $date_id);
             $stmt->execute();
             $result = $stmt->get_result();
 
