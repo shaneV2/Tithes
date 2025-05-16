@@ -102,56 +102,57 @@
 
             $total = $thousands_total + $five_hundreds_total + $two_hundreds_total + $hundreds_total + $fifties_total + $twenties_total + $tens_total + $fives_total + $ones_total;
 
-            echo '<tr>
+            echo '<table id="tithes-table">
+                <tr>
                     <td>1000</td>
-                    <td>'. $thousands .'</td>
+                    <td>'. ($thousands ?? 0) .'</td>
                     <td>'. $thousands_total .'</td>
                 </tr>
                 <tr>
                     <td>500</td>
-                    <td>'. $five_hundreds .'</td>
+                    <td>'. ($five_hundreds ?? 0) .'</td>
                     <td>'. $five_hundreds_total .'</td>
                 </tr>
                 <tr>
                     <td>200</td>
-                    <td>'. $two_hundreds .'</td>
+                    <td>'. ($two_hundreds ?? 0).'</td>
                     <td>'. $two_hundreds_total .'</td>
                 </tr>
                 <tr>
                     <td>100</td>
-                    <td>'. $hundreds .'</td>
+                    <td>'. ($hundreds ?? 0) .'</td>
                     <td>'. $hundreds_total .'</td>
                 </tr>
                 <tr>
                     <td>50</td>
-                    <td>'. $fifties .'</td>
+                    <td>'. ($fifties ?? 0) .'</td>
                     <td>'. $fifties_total .'</td>
                 </tr>
                 <tr>
                     <td>20</td>
-                    <td>'. $twenties .'</td>
+                    <td>'. ($twenties ?? 0) .'</td>
                     <td>'. $twenties_total .'</td>
                 </tr>
                 <tr>
                     <td>10</td>
-                    <td>'. $tens .'</td>
+                    <td>'. ($tens ?? 0) .'</td>
                     <td>'. $tens_total .'</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>'. $fives .'</td>
+                    <td>'. ($fives ?? 0) .'</td>
                     <td>'. $fives_total .'</td>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>'. $ones .'</td>
+                    <td>'. ($ones ?? 0) .'</td>
                     <td>'. $ones_total .'</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Total</td>
-                    <td>'. $total .'</td>
-                </tr>';
+                    <td>'. ($total ?? 0) .'</td>
+                </tr></table>';
             
             $conn->close();
             $stmt->close();

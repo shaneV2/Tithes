@@ -55,6 +55,10 @@
             case 'view-shares':
                 $date->getShares($date_id);
                 break;
+
+            case 'get-denominations-total':
+                $date->getDenominationsTotal($date_id);
+                break;
         }
     }
 

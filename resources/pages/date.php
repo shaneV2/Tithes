@@ -96,58 +96,9 @@
                 <a href="./giving.php">Back</a>
             </div>
             <p><?php echo $start_date . " - " . $end_date;?></p>
-            <table id="tithes-table">
-                <tr>
-                    <td>1000</td>
-                    <td>2</td>
-                    <td>2,000</td>
-                </tr>
-                <tr>
-                    <td>500</td>
-                    <td>2</td>
-                    <td>1,000</td>
-                </tr>
-                <tr>
-                    <td>200</td>
-                    <td>2</td>
-                    <td>400</td>
-                </tr>
-                <tr>
-                    <td>100</td>
-                    <td>2</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>50</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Total</td>
-                    <td>4,000</td>
-                </tr>
-            </table>
+            <div id="tithes-table-wrapper">
+                <!-- Denominations table reflects here -->
+            </div>
             <button id="add-tithes-btn">
                 <a href="./add-tithes.php?<?php echo "d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date; ?>">Add Tithes and Offerings</a>
             </button>
@@ -163,6 +114,7 @@
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
     <script src="../src/js/members.js" type="module"></script>
+    <script src="../src/js/getDenominationsTotal.js" type="module"></script>
     <script src="../src/js/viewShares.js" type="module"></script>
 </body>
 </html>

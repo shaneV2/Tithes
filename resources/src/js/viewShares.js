@@ -17,12 +17,11 @@ document.addEventListener("DOMContentLoaded", function(){
         shares_modal.style.display = "none";
     })
 
-    getShares()
+    getShares(inner_modal)
 })
 
 
-async function getShares() {
-    const inner_modal = document.getElementById("inner-modal");
+async function getShares(inner_modal) {
     
     const date_id = new URLSearchParams(window.location.search).get('d_id');
     const filepath = "./queries.php?action=view-shares&d_id=" + date_id;
