@@ -406,7 +406,7 @@ select {
 }
 
 .arrow-icon {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     width: 30px;
     height: 30px;
     display: flex;

@@ -205,6 +205,10 @@ select {
     -webkit-appearance: none;
 }
 
+#add-tithes-btn {
+    border-radius: 10px;
+}
+
 #add-tithes-btn > div {
     display: flex;
     flex-direction: row;
@@ -223,4 +227,14 @@ select {
     border: none;
     color: var(--white-text-color);
     margin-top: 13px;
+}
+
+#error > p{
+    text-align: center;
+    display: none;
+    color: red;
+}
+
+#add-tithes-btn > .button-error {
+    background-color: var(--border-color);
 }
