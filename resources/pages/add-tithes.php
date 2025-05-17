@@ -118,16 +118,18 @@
                         </div>
                     </div>
                 </div>
+                <div id="error"><p>Denominations does not equal to the total offering</p></div>
                 <div id="add-tithes-btn">
                     <div>
                         <label>Total</label>
-                        <p>PHP 1000</p>
+                        <p>PHP <span id="total">0</span></p>
                     </div>
-                    <button type="submit">Add Data</button>
+                    <button id="submit-btn" type="submit">Add Data</button>
                 </div>
             </form>
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../src/js/checkUserInputs.js" type="module"></script>
 </body>
 </html>
