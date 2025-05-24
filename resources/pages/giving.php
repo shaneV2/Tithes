@@ -45,11 +45,11 @@
                     <form action="./queries.php?action=add-date" method="post">
                         <div>
                             <label for="start-date">Start Date</label>
-                            <input type="date" id="start-date" name="start-date" placeholder="Select Start Date">
+                            <input type="date" id="start-date" name="start-date" placeholder="Select Start Date" required>
                         </div>
                         <div>
                             <label for="end-date">End Date</label>
-                            <input type="date" id="end-date" name="end-date" placeholder="Select End Date">
+                            <input type="date" id="end-date" name="end-date" placeholder="Select End Date" required>
                         </div>
                         <button id="add-date-submit-btn" name="submit" value="true">Add Date</button>
                     </form>
@@ -115,10 +115,36 @@
                 </div>
             </form>
         </section>
+        <div id="warning-modal">
+            <div id="warning-div">
+                <h4>WARNING:</h4>
+                <p>This action will permanently remove records associated with this date. Are you sure you want to proceed?</p>
+                <div id="warning-action-btns">
+                    <button id="warning-cancel-btn">Cancel</button>
+                    <button id="warning-delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
         <section id="date-list-section">  
             <p>Date List</p>
             <div id="date-list">
-            </div>
+                <div class="date">
+                    <a href="#">
+                        <p>Date here</p>
+                    </a>
+                    <div>
+                        <p class="delete-btn">Delete</p>
+                    </div>
+                </div>
+                <div class="date">
+                    <a href="#">
+                        <p>Date here</p>
+                    </a>
+                    <div>
+                        <p class="delete-btn">Delete</p>
+                    </div>
+                </div>
+            </div>      
         </section>
     </div>
     <script src="../src/js/selectDate.js" type="module"></script>
@@ -126,6 +152,6 @@
     <script src="../src/js/selectYear.js" type="module"></script>
     <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/getDates.js"></script>
+    <!-- <script src="../src/js/getDates.js"></script> -->
 </body>
 </html>

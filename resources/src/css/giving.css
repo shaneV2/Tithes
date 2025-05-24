@@ -3,6 +3,8 @@
     --light-green: #7FE77F;
     --dark-green: #0E740E;
     --dark-blue: #08053F;
+    --dark-red: #A81212;
+    --light-red: #FF8B8B;
 
     --border-color: #BEBEBE;
 
@@ -118,25 +120,24 @@ select {
 
 /* Add Date Section */
 #add-date-section {
-    position: absolute;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
     inset: 0;
-    height: 100lvh;
     box-sizing: border-box;
-    flex-direction: column;
-    display: none;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
 }
 
 .modal {
+    width: 50%;
+    min-width: 370px;
+    max-width: 500px;
+    border: var(--border-color) solid 1px;
     background-color: white;
     z-index: 100;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100px;
-    margin: 0 16px;
 }
 
 #add-date-header {
@@ -173,11 +174,6 @@ select {
 #end-date {
     border: var(--border-color) solid 1px;
     outline: none;
-}
-
-#add-date-section > div {
-    border: var(--border-color) solid 1px;
-    /* margin: 38px 30px; */
 }
 
 #add-date-section > div > div {
@@ -389,27 +385,89 @@ select {
 #date-list {
     display: flex;
     flex-direction: column;
-    gap: 3px;
     height: 400px;
     overflow-y: auto;
 }
 
-.date > a {
+.date {
+    border-top: 1px solid var(--border-color);
     display: flex;
+    gap: 0px;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 20px;
-    text-decoration: none;
-    color: var(--text-color);
-    border-top: 1px solid var(--border-color);
+    padding: 5px 0;
+}
+
+.date:last-child {
     border-bottom: 1px solid var(--border-color);
 }
 
-.arrow-icon {
-    transform: rotate(180deg);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
+.date > a {
+    padding: 10px 0 10px 12px;
+    width: 100%;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.delete-btn {
+    padding: 10px;
+    border-radius: 2px;
+    margin-right: 5px;
+    text-decoration: none;
+    background-color: var(--light-red);
+    color: var(--dark-red);
+}
+
+/* Warning modal */
+#warning-modal {
+    position: fixed;
+    display: none;
     justify-content: center;
+    align-items: center;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    width: 100%;
+}
+#warning-div {
+    min-width: 355px;
+    max-width: 500px;
+    background-color: white;
+    display: flex;
+    font-family: var(--body-font);
+    flex-direction: column;
+    gap: 20px;
+    padding: 14px;
+    text-align: center;
+    border: var(--border-color) 1px solid;
+}
+
+#warning-div > h4 {
+    font-size: 20px;
+}
+
+#warning-action-btns {
+    display: flex;
+    gap: 17px;
+}
+
+#warning-cancel-btn,
+#warning-delete-btn {
+    font-family: var(--body-font);
+    width: 100%;
+    font-weight: 500;
+    padding: 14px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+#warning-cancel-btn {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+#warning-delete-btn {
+    background-color: var(--light-red);
+    color: var(--dark-red);
 }
