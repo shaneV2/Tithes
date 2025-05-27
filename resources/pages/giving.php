@@ -133,7 +133,7 @@
                         <p>Date here</p>
                     </a>
                     <div>
-                        <p class="delete-btn">Delete</p>
+                        <p class="delete-btn" did="1">Delete</p>
                     </div>
                 </div>
                 <div class="date">
@@ -141,7 +141,7 @@
                         <p>Date here</p>
                     </a>
                     <div>
-                        <p class="delete-btn">Delete</p>
+                        <p class="delete-btn" did="2">Delete</p>
                     </div>
                 </div>
             </div>      
@@ -153,5 +153,6 @@
     <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
     <!-- <script src="../src/js/getDates.js"></script> -->
+    <script src="../src/js/deleteDate.js"></script>
 </body>
 </html>
