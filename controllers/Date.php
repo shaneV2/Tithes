@@ -9,6 +9,27 @@
             
             $conn->close();
         }
+
+        public function deleteDate($date_id){
+            $connection = $this->getConnection();
+
+            $delete_date_stmt = $connection->prepare("delete from dates where id=?");
+            $delete_date_stmt->bind_param("i", $date_id);
+            $delete_date_stmt->execute();
+
+            $delete_user_offer_stmt = $connection->prepare("delete from user_offers where date_id=?");
+            $delete_user_offer_stmt->bind_param("i", $date_id);
+            $delete_user_offer_stmt->execute();
+
+            $delete_denominations_stmt = $connection->prepare("delete from denominations where date_id=?");
+            $delete_denominations_stmt->bind_param("i", $date_id);
+            $delete_denominations_stmt->execute();
+
+            $delete_date_stmt->close();
+            $delete_user_offer_stmt->close();
+            $delete_denominations_stmt->close();
+            $connection->close();
+        }
         
         public function getDates(){
             $conn = $this->getConnection();
@@ -16,9 +37,7 @@
             $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result) == 0){
-                echo '<div class="date">
-                        <p style="text-align: center; margin-top:20px;">No date added yet.</p>
-                    </div>';
+                echo '<p style="text-align: center; margin-top:20px;">No date added yet.</p>';
             }else {
                 while ($row = mysqli_fetch_assoc($result)){
                     $date_id = $row['id'];
@@ -29,14 +48,13 @@
                     $formatted_ed = $end_date->format("F j, Y"); 
 
                     $formatted = $formatted_sd . " - " . $formatted_ed;
-
                     echo '<div class="date">
                             <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
                                 <p>'. $formatted .'</p>
-                                <div class="arrow-icon">
-                                    <img src="../src/assets/svg/ellipses.svg" height="100%" width="100%" alt="arrow">
-                                </div>
                             </a>
+                            <div>
+                                <p class="delete-btn" did="'. $date_id .'">Delete</p>
+                            </div>
                         </div>';
                 }
             }

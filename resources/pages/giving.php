@@ -128,22 +128,6 @@
         <section id="date-list-section">  
             <p>Date List</p>
             <div id="date-list">
-                <div class="date">
-                    <a href="#">
-                        <p>Date here</p>
-                    </a>
-                    <div>
-                        <p class="delete-btn" did="1">Delete</p>
-                    </div>
-                </div>
-                <div class="date">
-                    <a href="#">
-                        <p>Date here</p>
-                    </a>
-                    <div>
-                        <p class="delete-btn" did="2">Delete</p>
-                    </div>
-                </div>
             </div>      
         </section>
     </div>
@@ -152,7 +136,6 @@
     <script src="../src/js/selectYear.js" type="module"></script>
     <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <!-- <script src="../src/js/getDates.js"></script> -->
-    <script src="../src/js/deleteDate.js"></script>
+    <script src="../src/js/getDates.js" type="module"></script>
 </body>
 </html>

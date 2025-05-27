@@ -37,6 +37,10 @@
                 $offerings->addUserOffering($username, $date_id, $tithes_and_offerings, $denominations);
                 header("Location: date.php?d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date);
                 exit();
+            
+            case 'delete-date':
+                $date_id = $_POST['date_id'];
+                $date->deleteDate($date_id);
         }
 
     }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){
