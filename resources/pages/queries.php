@@ -41,6 +41,12 @@
             case 'delete-date':
                 $date_id = $_POST['date_id'];
                 $date->deleteDate($date_id);
+                exit();
+            
+            case 'delete-date-member':
+                $md_id = $_POST['md_id'];
+                $members->deleteMemberBasedOnDate($md_id);
+                exit();
         }
 
     }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){

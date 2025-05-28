@@ -136,6 +136,6 @@
     <script src="../src/js/selectYear.js" type="module"></script>
     <script src="../src/js/addDate.js" type="module"></script>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/getDates.js" type="module"></script>
+    <script src="../src/js/setupDateActions.js" type="module"></script>
 </body>
 </html>

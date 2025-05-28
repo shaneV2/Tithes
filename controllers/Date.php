@@ -53,7 +53,7 @@
                                 <p>'. $formatted .'</p>
                             </a>
                             <div>
-                                <p class="delete-btn" did="'. $date_id .'">Delete</p>
+                                <p class="delete-btn" did="'. $date_id .'" type="date">Delete</p>
                             </div>
                         </div>';
                 }

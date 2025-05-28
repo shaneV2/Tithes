@@ -119,29 +119,11 @@
         <section id="members-section">  
             <p>Members</p>
             <div id="members">
-                <div class="member">
-                    <a href="">
-                        <p>Shane Arragneuz</p>
-                    </a>
-                    <div class="action-btns">
-                        <a href="" class="edit-btn">Edit</a>
-                        <button class="delete-btn">Delete</button>
-                    </div>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Shane Arragneuz</p>
-                    </a>
-                    <div class="action-btns">
-                        <a href="" class="edit-btn">Edit</a>
-                        <button class="delete-btn">Delete</button>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <!-- <script src="../src/js/members.js" type="module"></script> -->
+    <script src="../src/js/members.js" type="module"></script>
     <script src="../src/js/getDenominationsTotal.js" type="module"></script>
     <script src="../src/js/viewShares.js" type="module"></script>
 </body>

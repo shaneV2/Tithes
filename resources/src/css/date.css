@@ -285,7 +285,6 @@ header > div > p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
 }
 
 .member:last-child {
@@ -296,6 +295,7 @@ header > div > p {
     padding: 10px 0 10px 12px;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     text-decoration: none;
     color: var(--text-color);
 }

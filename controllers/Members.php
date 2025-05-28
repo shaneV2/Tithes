@@ -12,19 +12,33 @@
                     echo '<div class="member">
                             <a href="">
                                 <p>'. $row['user_name'] .'</p>
-                                <div class="arrow-icon">
-                                    <img src="../src/assets/svg/ellipses.svg" height="100%" width="100%" alt="arrow">
-                                </div>
                             </a>
+                            <div class="action-btns">
+                                <a href="" class="edit-btn">Edit</a>
+                                <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Delete</button>
+                            </div>
                         </div>';
                 }
             }else {
-                echo '<div class="member">
-                        <p style="text-align: center; margin-top:20px;">No added tithes and offerings from users yet.</p>
-                    </div>';
+                echo '<p style="text-align: center; margin-top:20px;">No added tithes and offerings yet.</p>';
             }
 
             $conn->close();
             $stmt->close();
+        }
+
+        public function deleteMemberBasedOnDate($md_id){
+            $conn = $this->getConnection();
+            $stmt = $conn->prepare('delete from user_offers where id=?');
+            $stmt->bind_param('i', $md_id);
+            $stmt->execute();
+
+            $denominations_stmt = $conn->prepare('delete from denominations where id=?');
+            $denominations_stmt->bind_param('i', $md_id);
+            $denominations_stmt->execute();
+
+            $conn->close();
+            $stmt->close();
+            $denominations_stmt->close();
         }
     }
