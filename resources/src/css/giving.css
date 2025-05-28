@@ -432,6 +432,7 @@ select {
 #warning-div {
     min-width: 355px;
     max-width: 500px;
+    width: 50%;
     background-color: white;
     display: flex;
     font-family: var(--body-font);

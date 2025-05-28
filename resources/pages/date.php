@@ -106,14 +106,42 @@
                 View shares
             </butti>
         </section>
+        <div id="warning-modal">
+            <div id="warning-div">
+                <h4>WARNING:</h4>
+                <p>This action will permanently remove records associated with this date. Are you sure you want to proceed?</p>
+                <div id="warning-action-btns">
+                    <button id="warning-cancel-btn">Cancel</button>
+                    <button id="warning-delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
         <section id="members-section">  
             <p>Members</p>
             <div id="members">
+                <div class="member">
+                    <a href="">
+                        <p>Shane Arragneuz</p>
+                    </a>
+                    <div class="action-btns">
+                        <a href="" class="edit-btn">Edit</a>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+                <div class="member">
+                    <a href="">
+                        <p>Shane Arragneuz</p>
+                    </a>
+                    <div class="action-btns">
+                        <a href="" class="edit-btn">Edit</a>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/members.js" type="module"></script>
+    <!-- <script src="../src/js/members.js" type="module"></script> -->
     <script src="../src/js/getDenominationsTotal.js" type="module"></script>
     <script src="../src/js/viewShares.js" type="module"></script>
 </body>
