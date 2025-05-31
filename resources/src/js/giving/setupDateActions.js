@@ -1,8 +1,8 @@
-import refreshMemberList from "./members.js";
+import getDates from "./getDates.js";
 
-let current_delete_member_id = null;
+let current_delete_date_id = null;
 
-export default function setupMemberActions(){
+export default function setupDateActions(){
     const delete_btns  = document.querySelectorAll(".delete-btn")
     const warning_modal = document.getElementById("warning-modal")
     const warning_modal_child = document.getElementById("warning-div")
@@ -20,7 +20,7 @@ export default function setupMemberActions(){
     function closeWarningModal(){warning_modal.style.display = "none"}
  
     function toggleWarningDeleteModal(e){
-        current_delete_member_id = e.target.getAttribute("md_id");
+        current_delete_date_id = e.target.getAttribute("did");
         if (warning_modal.style.display == "none" || warning_modal.style.display == ""){
             warning_modal.style.display = "flex"
         }else {
@@ -30,14 +30,14 @@ export default function setupMemberActions(){
 
     function confirmDeleteDate(){
         async function deleteDate() {
-            const filepath = "./queries.php?action=delete-date-member";  
+            const filepath = "./queries.php?action=delete-date&date_id=" + current_delete_date_id;  
             try {
                 const response = await fetch(filepath, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
-                    body: "md_id=" + encodeURIComponent(current_delete_member_id)
+                    body: "date_id=" + encodeURIComponent(current_delete_date_id)
                 });
                 if (!response.ok) throw new Error("Unable to delete date.");
                 const data = response.text()
@@ -48,8 +48,8 @@ export default function setupMemberActions(){
         // Assign current date id to null
         // Refresh after deleting 
         deleteDate()
-        current_delete_member_id = null
+        current_delete_date_id = null
         closeWarningModal()
-        refreshMemberList()
+        getDates();
     }
 }

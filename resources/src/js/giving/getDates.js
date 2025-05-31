@@ -1,6 +1,6 @@
 import setupDateActions from "./setupDateActions.js";
 
-async function getDates() {
+export default async function getDates() {
     const date_list_div = document.getElementById("date-list");
     const filepath = "./queries.php?action=get-dates";
 
@@ -16,12 +16,4 @@ async function getDates() {
         console.error("Fetch error: " + error)
         date_list_div.innerHTML = "Failed to load dates";
     }
-}
-
-document.addEventListener("DOMContentLoaded", function (){
-    refreshDate();
-})
-
-export default function refreshDate(){
-    getDates()
 }

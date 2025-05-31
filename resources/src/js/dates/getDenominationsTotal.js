@@ -1,10 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+export default async function getDenominationsTotal(){
     const tithes_table_wrapper = document.getElementById('tithes-table-wrapper')
-    getDenominationsTotal(tithes_table_wrapper);
-})
-
-
-async function getDenominationsTotal(tithes_table_wrapper){
     const date_id = new URLSearchParams(window.location.search).get('d_id')
     const filepath = "./queries.php?action=get-denominations-total&d_id=" + date_id;
 
@@ -15,6 +10,7 @@ async function getDenominationsTotal(tithes_table_wrapper){
 
         // Create temporary wrapper
         // Append elements to tithes table 
+        tithes_table_wrapper.innerHTML = ""
         const temporary_wrapper = document.createElement('div')
         temporary_wrapper.innerHTML = data
         if (temporary_wrapper.firstChild){

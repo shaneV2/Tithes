@@ -55,7 +55,7 @@
                 <div id="offerings-input-field">
                     <div>
                         <label for="name">Name</label>
-                        <input id="name" type="text" name="username" required>
+                        <input id="name" type="text" name="username" required autofocus>
                     </div>
                     <div>
                         <label for="tithes">Tithes</label>
@@ -130,6 +130,6 @@
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/checkUserInputs.js" type="module"></script>
+    <script src="../src/js/add-tithes/checkUserInputs.js" type="module"></script>
 </body>
 </html>

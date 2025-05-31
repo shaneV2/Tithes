@@ -123,8 +123,7 @@
         </section>
     </div>
     <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/members.js" type="module"></script>
-    <script src="../src/js/getDenominationsTotal.js" type="module"></script>
-    <script src="../src/js/viewShares.js" type="module"></script>
+    <script src="../src/js/dates/members.js" type="module"></script>
+    <script src="../src/js/dates/loadDenominationsAndShares.js" type="module"></script>
 </body>
 </html>
