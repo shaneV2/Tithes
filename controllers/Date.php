@@ -66,7 +66,7 @@
             $month_number = date("n", strtotime($month));
             
             $conn = $this->getConnection();
-            $stmt = $conn->prepare("select * from dates where MONTH(start_date)=? and YEAR(start_date)=? group by start_date asc");
+            $stmt = $conn->prepare("select * from dates where MONTH(start_date)=? and YEAR(start_date)=? order by start_date asc");
             $stmt->bind_param("ii", $month_number, $year);
             $stmt->execute();
 

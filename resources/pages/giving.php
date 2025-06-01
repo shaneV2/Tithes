@@ -128,7 +128,7 @@
         <section id="date-list-section">  
             <p>Date List</p>
             <div id="date-list">
-            </div>      
+            </div>
         </section>
     </div>
     <script src="../src/js/selectMonth.js" type="module"></script>

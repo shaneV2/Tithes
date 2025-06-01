@@ -1,8 +1,12 @@
 import getDates from "./getDates.js";
+import filterDate from "./filterDate.js";
 
 let current_delete_date_id = null;
 
 export default function setupDateActions(){
+    const month_value = document.getElementById("month").value
+    const year_value = document.getElementById("year").value
+
     const delete_btns  = document.querySelectorAll(".delete-btn")
     const warning_modal = document.getElementById("warning-modal")
     const warning_modal_child = document.getElementById("warning-div")
@@ -50,6 +54,11 @@ export default function setupDateActions(){
         deleteDate()
         current_delete_date_id = null
         closeWarningModal()
-        getDates();
+        
+        if (month_value || year_value){
+            filterDate()
+        }else {
+            getDates()
+        }
     }
 }
