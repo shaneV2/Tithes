@@ -69,6 +69,12 @@
             case 'get-denominations-total':
                 $date->getDenominationsTotal($date_id);
                 break;
+            
+            case 'filter-date':
+                $month = $_GET['month'];
+                $year = $_GET['year'];
+                $date->filterDate($month, $year);
+                break;
         }
     }
 

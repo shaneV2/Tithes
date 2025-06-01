@@ -351,9 +351,10 @@ select {
     border-radius: 5px;
 }
 
-#date-section #submit-btn > button {
+#date-section #submit-btn > p {
     padding: 17px 38px;
     border: none;
+    border-radius: 5px;
     background-color: var(--light-green);
 }
 

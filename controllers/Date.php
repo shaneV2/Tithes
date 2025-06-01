@@ -62,6 +62,42 @@
             $conn->close();
         }
 
+        public function filterDate($month, $year){
+            $month_number = date("n", strtotime($month));
+            
+            $conn = $this->getConnection();
+            $stmt = $conn->prepare("select * from dates where MONTH(start_date)=? and YEAR(start_date)=? group by start_date asc");
+            $stmt->bind_param("ii", $month_number, $year);
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $date_id = $row['id'];
+                    $start_date = new DateTime($row['start_date']);
+                    $end_date = new DateTime($row['end_date']);
+
+                    $formatted_sd = $start_date->format("F j, Y"); 
+                    $formatted_ed = $end_date->format("F j, Y"); 
+
+                    $formatted = $formatted_sd . " - " . $formatted_ed;
+                    echo '<div class="date">
+                            <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
+                                <p>'. $formatted .'</p>
+                            </a>
+                            <div>
+                                <p class="delete-btn" did="'. $date_id .'" type="date">Delete</p>
+                            </div>
+                        </div>';
+                }
+            }else {
+                echo '<p style="text-align: center; margin-top:20px;">No date found.</p>';  
+            }
+
+            $conn->close();
+            $stmt->close();
+        }
+
         public function getDenominationsTotal($date_id){
             $conn = $this->getConnection();
 

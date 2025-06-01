@@ -82,7 +82,7 @@
             </div>
             <div id="years-options">
                 <div>
-                    <button class="year-btn">2001</button>
+                    <button class="year-btn">2025</button>
                     <button class="year-btn">2002</button>
                     <button class="year-btn">2003</button>
                     <button class="year-btn">2004</button>
@@ -109,9 +109,9 @@
                     </div>
                 </div>
                 <div id="submit-btn">
-                    <button type="submit">
+                    <p>
                         <img src="../src/assets/images/Filter.png" alt="filter image">
-                    </button>
+                    </p>
                 </div>
             </form>
         </section>
@@ -137,5 +137,6 @@
     <script src="../src/js/giving/addDate.js" type="module"></script>
     <script src="../src/js/selectDate.js" type="module"></script>
     <script src="../src/js/giving/useDateActions.js" type="module"></script>
+    <script src="../src/js/giving/useFilter.js" type="module"></script>
 </body>
 </html>
