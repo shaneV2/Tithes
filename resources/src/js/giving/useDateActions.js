@@ -1,5 +1,6 @@
 import getDates from "./getDates.js"
 import filterDate from "./filterDate.js";
+import checkIfFilterEnabled, {setMonthAndYearFilterFromURL} from "./filterUtils.js";
 
 let current_delete_date_id = null;
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,7 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    getDates()
+    if (checkIfFilterEnabled() == true){
+        setMonthAndYearFilterFromURL()
+        filterDate()
+    }else {
+        getDates()
+    }
 })
 
 async function deleteDate() {

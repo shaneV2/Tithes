@@ -82,7 +82,7 @@
 
                     $formatted = $formatted_sd . " - " . $formatted_ed;
                     echo '<div class="date">
-                            <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
+                            <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'&fromFilter=true&month='. $month .'&year='. $year .'">
                                 <p>'. $formatted .'</p>
                             </a>
                             <div>

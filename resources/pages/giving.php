@@ -95,7 +95,7 @@
                 </div>
             </div>
             <p>Select Date</p>
-            <form action="test.php" method="get">
+            <form action="#" method="get">
                 <div class="select-container">
                     <input class="input-field" type="text" name="month" id="month" value="" placeholder="Month" readonly>
                     <div class="dropdown-icon">

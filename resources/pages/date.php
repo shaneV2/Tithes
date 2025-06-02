@@ -2,6 +2,8 @@
     $date_id = $_GET['d_id'];
     $start_date = $_GET['start_date'];
     $end_date = $_GET['end_date'];
+    $month_filter_name = $_GET['month'] ?? null;
+    $year_filter = $_GET['year'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +95,13 @@
         </section>
         <section id="total-tithes-offering-section">
             <div id="back-btn">
-                <a href="./giving.php">Back</a>
+                <?php 
+                    $query_string = "";
+                    if (isset($_GET['fromFilter'])){
+                        $query_string = "?filter=true&month=" . $month_filter_name . "&year=" . $year_filter;
+                    }
+                ?>
+                <a href="./giving.php<?php echo $query_string;?>">Back</a>
             </div>
             <p><?php echo $start_date . " - " . $end_date;?></p>
             <div id="tithes-table-wrapper">
