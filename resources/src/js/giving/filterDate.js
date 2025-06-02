@@ -1,4 +1,3 @@
-import setupDateActions from "./setupDateActions.js";
 import resetDropdowns from "../selectDate.js";
 
 export default async function filterDate() {
@@ -13,7 +12,6 @@ export default async function filterDate() {
         if (!response.ok) throw new Error("Network error. Make sure you are connected to the internet.");
         const data = await response.text();
         date_list_div.innerHTML = data;
-        setupDateActions()
         resetDropdowns()
 
     } catch (error) {
