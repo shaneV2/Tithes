@@ -125,5 +125,6 @@
     <script src="../src/js/toggleNavigation.js" type="module"></script>
     <script src="../src/js/dates/members.js" type="module"></script>
     <script src="../src/js/dates/loadDenominationsAndShares.js" type="module"></script>
+    <script src="../src/js/dates/useMemberActions.js" type="module"></script>
 </body>
 </html>
