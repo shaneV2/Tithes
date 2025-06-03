@@ -121,7 +121,7 @@ select {
 /* Add Date Section */
 #add-date-section {
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 100;
@@ -244,8 +244,23 @@ select {
     position: relative;
 }
 
-#date-section > p {
+#date-section > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 1.1rem;
+}
+
+#clear-filter-btn {
+    margin-right: 10px;
+    text-align: right;  
+}
+#clear-filter-btn > button {
+    border: var(--border-color) 1px solid;
+    background-color: var(--border-color);
+    color: black;
+    padding: 5px 7px;
+    font-style: italic;
 }
 
 #months-options {

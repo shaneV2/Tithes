@@ -4,6 +4,8 @@ export default async function filterDate() {
     const month = document.getElementById("month").value
     const year = document.getElementById("year").value
 
+    if (month == "" && year == "") return 
+
     const date_list_div = document.getElementById("date-list");
     const filepath = "./queries.php?action=filter-date&month=" + month + "&year=" + year;
 

@@ -75,6 +75,14 @@
                 $year = $_GET['year'];
                 $date->filterDate($month, $year);
                 break;
+
+            case 'clear-session-for-filter':
+                session_start();
+                if (isset($_SESSION['filter_month'])){
+                    session_unset();
+                    session_destroy();
+                }
+                break;
         }
     }
 

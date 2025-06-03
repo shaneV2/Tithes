@@ -95,13 +95,7 @@
         </section>
         <section id="total-tithes-offering-section">
             <div id="back-btn">
-                <?php 
-                    $query_string = "";
-                    if (isset($_GET['fromFilter'])){
-                        $query_string = "?filter=true&month=" . $month_filter_name . "&year=" . $year_filter;
-                    }
-                ?>
-                <a href="./giving.php<?php echo $query_string;?>">Back</a>
+                <a href="./giving.php">Back</a>
             </div>
             <p><?php echo $start_date . " - " . $end_date;?></p>
             <div id="tithes-table-wrapper">

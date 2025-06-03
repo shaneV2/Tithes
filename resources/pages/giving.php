@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,16 +96,29 @@
                     <button class="year-btn">2010</button>
                 </div>
             </div>
-            <p>Select Date</p>
+            <div id="select-date-header">
+                <p>Select Date</p>
+                <div id="clear-filter-btn">
+                    <button>clear filter</button>
+                </div>
+            </div>
             <form action="#" method="get">
                 <div class="select-container">
-                    <input class="input-field" type="text" name="month" id="month" value="" placeholder="Month" readonly>
+                    <input class="input-field" type="text" name="month" id="month" value="<?php 
+                        if (isset(($_SESSION['filter_month']))){
+                            echo $_SESSION['filter_month'];
+                        }
+                    ?>" placeholder="Month" readonly>
                     <div class="dropdown-icon">
                         <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>
                 </div>
                 <div class="select-container">
-                    <input class="input-field" type="text" name="year" id="year" value="" placeholder="Year" readonly>
+                    <input class="input-field" type="text" name="year" id="year" value="<?php 
+                        if (isset(($_SESSION['filter_year']))){
+                            echo $_SESSION['filter_year'];
+                        }
+                    ?>" placeholder="Year" readonly>
                     <div class="dropdown-icon">
                         <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>

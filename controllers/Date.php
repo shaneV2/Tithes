@@ -72,6 +72,11 @@
 
             $result = $stmt->get_result();
             if(mysqli_num_rows($result) > 0){
+                session_start();
+
+                $_SESSION['filter_month'] = $month;
+                $_SESSION['filter_year'] = $year;
+
                 while($row = mysqli_fetch_assoc($result)){
                     $date_id = $row['id'];
                     $start_date = new DateTime($row['start_date']);

@@ -1,21 +1,30 @@
 import getDates from "./getDates.js"
 import filterDate from "./filterDate.js";
-import checkIfFilterEnabled, {setMonthAndYearFilterFromURL} from "./filterUtils.js";
+import checkIfFilterEnabled from "./filterUtils.js";
+import clearFilter from "./clearFilter.js";
 
 let current_delete_date_id = null;
 document.addEventListener("DOMContentLoaded", () => {
     const date_list_div = document.getElementById("date-list")
+    const add_date_section = document.getElementById("add-date-section")
 
     const warning_modal = document.getElementById("warning-modal")
     const warning_modal_child = document.getElementById("warning-div")
     const cancel_btn = document.getElementById("warning-cancel-btn")
     const delete_btn = document.getElementById("warning-delete-btn")
+    const clear_filter_btn = document.getElementById("clear-filter-btn")
+    
+    add_date_section.style.display = "none"
     
     date_list_div.addEventListener("click", (e) => {
         if (e.target.classList.contains('delete-btn')){
             current_delete_date_id = e.target.getAttribute('did')
             warning_modal.style.display = 'flex'
         }
+    })
+    clear_filter_btn.addEventListener("click", async ()=> {
+        clearFilter()
+        await getDates()
     })
 
     function closeWarningModal(){warning_modal.style.display = "none"}
@@ -25,14 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     warning_modal_child.addEventListener("click", (e) => {e.stopPropagation()})
     cancel_btn.addEventListener("click", closeWarningModal)
     delete_btn.addEventListener("click", async () => {
-        const month_value = document.getElementById("month").value
-        const year_value = document.getElementById("year").value
-        
         await deleteDate()
         current_delete_date_id = null
         closeWarningModal()
 
-        if (month_value || year_value){
+        if (checkIfFilterEnabled() == true){
             await filterDate()
         }else {
             await getDates()
@@ -40,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     if (checkIfFilterEnabled() == true){
-        setMonthAndYearFilterFromURL()
         filterDate()
     }else {
         getDates()
