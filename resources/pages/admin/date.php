@@ -12,8 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/css/main.css">
-    <link rel="stylesheet" href="../src/css/date.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="stylesheet" href="../../src/css/date.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,13 +28,13 @@
             </div>
             <nav>
                 <div id="menu-icon">
-                    <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
+                    <img src="../../src/assets/images/Menu.png" height="38" width="38" alt="">
                 </div>
             </nav>
         </header>
         <aside id="navigation-pane">
             <div>
-                <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
+                <div id="close-menu-icon"><img src="../../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
@@ -48,7 +48,7 @@
                 <div>
                     <p>Arranguez, Darryl Y.</p>
                     <div class="close-btn">
-                        <img src="../src/assets/images/close.png" height="100%" width="100%" alt="">
+                        <img src="../../src/assets/images/close.png" height="100%" width="100%" alt="">
                     </div>
                 </div>
                 <table>
@@ -88,7 +88,7 @@
                 <div>
                     <p>Shares</p>
                     <div id="shares-close-btn">
-                        <img src="../src/assets/images/close.png" height="100%" width="100%" alt="">
+                        <img src="../../src/assets/images/close.png" height="100%" width="100%" alt="">
                     </div>
                 </div>
             </div>
@@ -124,9 +124,9 @@
             </div>
         </section>
     </div>
-    <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/dates/members.js" type="module"></script>
-    <script src="../src/js/dates/loadDenominationsAndShares.js" type="module"></script>
-    <script src="../src/js/dates/useMemberActions.js" type="module"></script>
+    <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/dates/members.js" type="module"></script>
+    <script src="../../src/js/dates/loadDenominationsAndShares.js" type="module"></script>
+    <script src="../../src/js/dates/useMemberActions.js" type="module"></script>
 </body>
 </html>

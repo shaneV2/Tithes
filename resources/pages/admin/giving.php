@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/css/main.css">
-    <link rel="stylesheet" href="../src/css/giving.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="stylesheet" href="../../src/css/giving.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,13 +22,13 @@
             </div>
             <nav>
                 <div id="menu-icon">
-                    <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
+                    <img src="../../src/assets/images/Menu.png" height="38" width="38" alt="">
                 </div>
             </nav>
         </header>
         <aside id="navigation-pane">
             <div>
-                <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
+                <div id="close-menu-icon"><img src="../../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
                     <a href="./homepage.php">Home</a>
                     <a href="#">Giving</a>
@@ -41,7 +41,7 @@
             <div class="modal">
                 <div id="add-date-header">
                     <p>Add Date</p>
-                    <button id="close-btn"><img src="../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
+                    <button id="close-btn"><img src="../../src/assets/images/close.png" height="100%" width="100%" alt=""></button>
                 </div>
                 <div>
                     <form action="./queries.php?action=add-date" method="post">
@@ -63,7 +63,7 @@
             <div id="add-date-btn">
                 <button>Add Date</button>
                 <div id="add-btn-img">
-                    <img src="../src/assets/images/plus.png" alt="">
+                    <img src="../../src/assets/images/plus.png" alt="">
                 </div>
             </div>
         </section>
@@ -110,7 +110,7 @@
                         }
                     ?>" placeholder="Month" readonly>
                     <div class="dropdown-icon">
-                        <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
+                        <img src="../../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>
                 </div>
                 <div class="select-container">
@@ -120,12 +120,12 @@
                         }
                     ?>" placeholder="Year" readonly>
                     <div class="dropdown-icon">
-                        <img src="../src/assets/images/down.png" width="100%" height="100%" alt="">
+                        <img src="../../src/assets/images/down.png" width="100%" height="100%" alt="">
                     </div>
                 </div>
                 <div id="submit-btn">
                     <p>
-                        <img src="../src/assets/images/Filter.png" alt="filter image">
+                        <img src="../../src/assets/images/Filter.png" alt="filter image">
                     </p>
                 </div>
             </form>
@@ -146,12 +146,12 @@
             </div>
         </section>
     </div>
-    <script src="../src/js/selectMonth.js" type="module"></script>
-    <script src="../src/js/selectYear.js" type="module"></script>
-    <script src="../src/js/toggleNavigation.js" type="module"></script>
-    <script src="../src/js/giving/addDate.js" type="module"></script>
-    <script src="../src/js/selectDate.js" type="module"></script>
-    <script src="../src/js/giving/useDateActions.js" type="module"></script>
-    <script src="../src/js/giving/useFilter.js" type="module"></script>
+    <script src="../../src/js/selectMonth.js" type="module"></script>
+    <script src="../../src/js/selectYear.js" type="module"></script>
+    <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/giving/addDate.js" type="module"></script>
+    <script src="../../src/js/selectDate.js" type="module"></script>
+    <script src="../../src/js/giving/useDateActions.js" type="module"></script>
+    <script src="../../src/js/giving/useFilter.js" type="module"></script>
 </body>
 </html>

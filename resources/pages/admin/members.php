@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/css/main.css">
-    <link rel="stylesheet" href="../src/css/members.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="stylesheet" href="../../src/css/members.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,13 @@
             </div>
             <nav>
                 <div id="menu-icon">
-                    <img src="../src/assets/images/Menu.png" height="38" width="38" alt="">
+                    <img src="../../src/assets/images/Menu.png" height="38" width="38" alt="">
                 </div>
             </nav>
         </header>
         <aside id="navigation-pane">
             <div>
-                <div id="close-menu-icon"><img src="../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
+                <div id="close-menu-icon"><img src="../../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
@@ -53,7 +53,7 @@
                 <div id="search-code-field">
                     <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Name or user code">
                     <button id="search-member-btn" type="submit" name="submit" value="true">
-                        <img src="../src/assets/images/Search.png" width="100%" height="100%" alt="search">
+                        <img src="../../src/assets/images/Search.png" width="100%" height="100%" alt="search">
                     </button>
                 </div>
             </form>
@@ -65,7 +65,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -73,7 +73,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -81,7 +81,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -89,7 +89,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -97,7 +97,7 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
@@ -105,13 +105,13 @@
                     <a href="">
                         <p>Arranguez, Darryl Y.</p>
                         <div class="arrow-icon">
-                            <img src="../src/assets/svg/ellipses.svg" alt="arrow">
+                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
                         </div>
                     </a>
                 </div>
             </div>
         </section>
     </div>
-    <script src="../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/toggleNavigation.js" type="module"></script>
 </body>
 </html>

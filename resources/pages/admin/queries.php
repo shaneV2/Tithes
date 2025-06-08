@@ -1,8 +1,8 @@
 <?php
-    require '../../controllers/Database.php';
-    require '../../controllers/Date.php';
-    require '../../controllers/Members.php';
-    require '../../controllers/Offerings.php';
+    require '../../../controllers/Database.php';
+    require '../../../controllers/Date.php';
+    require '../../../controllers/Members.php';
+    require '../../../controllers/Offerings.php';
 
     $date = new Date();
     $members = new Members();
