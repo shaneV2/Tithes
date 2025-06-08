@@ -1,0 +1,127 @@
+:root {
+    /* Colors */
+    --light-green: #7FE77F;
+    --dark-green: #0E740E;
+    --dark-blue: #08053F;
+    --dark-red: #A81212;
+    --light-red: #FF8B8B;
+
+    --border-color: #BEBEBE;
+
+    --text-color: #363636;
+    --light-text-color: #545151;
+    --white-text-color: #E7E7E7;
+
+    --header-font: 'Oswald', sans-serif;
+    --body-font: 'Inter', sans-serif;
+
+    --border-1: 1px solid red;
+    --border-2: 1px solid green;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: auto;
+    width: 100%;
+    max-width: 578px;
+    min-width: 412px;
+}
+
+main > div {
+    margin: 0 2rem;
+}
+
+/* Header section */
+#header {
+    margin-top: 86px;
+    text-align: center;
+    font-family: var(--header-font);
+}
+
+#header > p:first-child span {
+    font-size: 37px;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+#header > p:first-child span:first-child {
+    color: var(--dark-green);
+}
+
+#header > p:first-child span:last-child {
+    color: var(--dark-blue);
+}
+
+#header > p:last-child {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Input section */
+#input-section {
+    margin-top: 59px;
+}
+
+#input-section > div:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    gap: 28px;
+}
+
+.hr-line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--text-color);
+}
+
+#input-section form > div > * {
+    display: block;
+}
+
+#input-section form > :first-child,
+#input-section form > :nth-child(2) {
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: var(--body-font);
+    margin-top: 19px;
+}
+
+#username, 
+#password {
+    margin-top: 2px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 10px;
+    border-radius: 5px;
+    border: var(--border-color) 1px solid;
+    color: var(--text-color);
+}
+
+#submit-btn {
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background-color: var(--dark-green);
+    color: white;
+    box-sizing: border-box;
+}
+
+
+/* Register-section */
+#register-section {
+    margin-top: 12px;
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: 14px;
+}
