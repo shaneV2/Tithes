@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input id="password" type="password">
+                        <input id="password" type="password" autocomplete="off">
                     </div>
                     <button type="submit" id="submit-btn">
                         Login
@@ -34,7 +34,7 @@
                 </form>
             </div>
         </div>
-        <div id="register-section">No account yet? <a href="#">register</a></div>
+        <div id="register-section">No account yet? <a href="./register.php">register</a></div>
     </main>
 </body>
 </html>
