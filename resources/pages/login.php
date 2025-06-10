@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input id="password" type="password">
+                        <input id="password" type="password" autocomplete="off">
                     </div>
                     <button type="submit" id="submit-btn">
                         Login
