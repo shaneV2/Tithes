@@ -34,7 +34,7 @@
                 </form>
             </div>
         </div>
-        <div id="register-section">No account yet? <a href="#">register</a></div>
+        <div id="register-section">No account yet? <a href="./register.php">register</a></div>
     </main>
 </body>
 </html>
