@@ -4,6 +4,7 @@
     --dark-green: #0E740E;
     --dark-blue: #08053F;
     --dark-red: #A81212;
+    --text-error-color: #eb0e0e;
     --light-red: #FF8B8B;
 
     --border-color: #BEBEBE;
@@ -108,6 +109,15 @@ main > div {
     border-radius: 5px;
     border: var(--border-color) 1px solid;
     color: var(--text-color);
+}
+
+input#fname,
+input#lname {
+    text-transform: capitalize;
+}
+
+#input-section form input.input-error {
+    border: var(--light-red) 2px solid !important;
 }
 
 #submit-btn {

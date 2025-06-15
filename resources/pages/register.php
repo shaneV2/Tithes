@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,32 +21,97 @@
                 <div class="hr-line"></div>
             </div>
             <div>
-                <form action="#" method="post">
+                <form action="./admin/queries.php?action=register-user" method="post">
                     <div>
                         <div>
                             <label for="fname">First name</label>
-                            <input id="fname" type="text" autocomplete="off" required>
+                            <input 
+                                id="fname" 
+                                name="firstname" 
+                                type="text" 
+                                autocomplete="off" 
+                                value="<?php 
+                                    if ((isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])) && isset($_SESSION['firstname'])){
+                                        echo $_SESSION['firstname'];
+                                    }
+                                ?>"
+                                required>
                         </div>
                         <div>
                             <label for="lname">Lastname</label>
-                            <input id="lname" type="text" autocomplete="off" required>
+                            <input 
+                                id="lname" 
+                                name="lastname" 
+                                type="text" 
+                                autocomplete="off"
+                                value="<?php 
+                                    if ((isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])) && isset($_SESSION['lastname'])){
+                                        echo $_SESSION['lastname'];
+                                    }
+                                ?>" 
+                                required>
                         </div>
                     </div>
                     <div>
-                        <label for="username">Username</label>
-                        <input id="username" type="text"  autocomplete="on" required>
+                        <label for="username">
+                            Username 
+                            <?php echo isset($_SESSION['username_error']) ? "<span style='color: #eb0e0e;'>* is already taken.</span>" : "" ;?>
+                        </label>
+                        <input 
+                            id="username" 
+                            name="username" 
+                            type="text" 
+                            autocomplete="on" 
+                            pattern="[A-Za-z0-9]+\.jrcc" 
+                            title="Valid username should only include letters and/or numbers and must end with .jrcc (e.g exampleusername.jrcc, exampleusername09.jrcc or 09.jrcc)" 
+                            class="<?php echo isset($_SESSION['username_error'])? "input-error" : "" ;?>"
+                            value="<?php 
+                                if ((isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])) && isset($_SESSION['username'])){
+                                    echo $_SESSION['username'];
+                                }
+                            ?>"
+                            required 
+                        >
                     </div>
                     <div>
-                        <label for="password">Password</label>
-                        <input id="password" type="password"  autocomplete="off" required>
+                        <label for="password">Password <?php echo isset($_SESSION['password_mismatch']) ? "<span style='color: #eb0e0e;'>* does not match.</span>" : "" ;?></label>
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="text"  
+                            autocomplete="off" 
+                            value="<?php 
+                                if ((isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])) && isset($_SESSION['password'])){
+                                    echo $_SESSION['password'];
+                                }
+                            ?>"
+                            required>
                     </div>
                     <div>
                         <label for="confirm-password">Confirm Password</label>
-                        <input id="confirm-password" type="password" autocomplete="off" required>
+                        <input 
+                            id="confirm-password" 
+                            name="confirm-password"
+                            type="text" 
+                            autocomplete="off"
+                            value="<?php 
+                                if(isset($_SESSION['password_mismatch']) && isset($_SESSION['password'])){
+                                    echo "";
+                                }else if (isset($_SESSION['username_error']) && isset($_SESSION['password'])){
+                                    echo $_SESSION['password'];
+                                }
+                            ?>" 
+                            required>
                     </div>
                     <button type="submit" id="submit-btn">
-                        Login
+                        Register
                     </button>
+                    <?php 
+                        if (isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])){
+                            session_unset();
+                            session_destroy();
+                        } 
+                    ?>
                 </form>
             </div>
         </div>

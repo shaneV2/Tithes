@@ -1,9 +1,11 @@
 <?php
     require '../../../controllers/Database.php';
+    require '../../../controllers/Register.php';
     require '../../../controllers/Date.php';
     require '../../../controllers/Members.php';
     require '../../../controllers/Offerings.php';
 
+    $register = new Register();
     $date = new Date();
     $members = new Members();
     $offerings = new Offerings();
@@ -12,6 +14,18 @@
         $action = $_GET['action'];
         
         switch($action){
+            case 'register-user':
+                $firstname = $_POST['firstname'];
+                $lastname = $_POST['lastname'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $password = $_POST['password'];
+                $confirm_password = $_POST['confirm-password'];
+
+                $register->registerUser($firstname, $lastname, $username, $password, $confirm_password);
+                header("Location: ../register.php");
+                exit();
+
             case 'add-date':
                 $start_date = $_POST['start-date'];        
                 $end_date = $_POST['end-date'];        
