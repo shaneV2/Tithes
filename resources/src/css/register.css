@@ -82,9 +82,10 @@ main > div {
 }
 
 #input-section form > div:first-child {
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    gap: 0px;
+    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
 }
 
@@ -123,7 +124,7 @@ main > div {
 
 
 /* Register-section */
-#login-section {
+#register-section {
     margin-top: 12px;
     color: var(--text-color);
     font-family: var(--body-font);
