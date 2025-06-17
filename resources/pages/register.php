@@ -78,7 +78,7 @@
                         <input 
                             id="password" 
                             name="password" 
-                            type="text"  
+                            type="password"  
                             autocomplete="off" 
                             value="<?php 
                                 if ((isset($_SESSION['username_error']) || isset($_SESSION['password_mismatch'])) && isset($_SESSION['password'])){
@@ -92,7 +92,7 @@
                         <input 
                             id="confirm-password" 
                             name="confirm-password"
-                            type="text" 
+                            type="password" 
                             autocomplete="off"
                             value="<?php 
                                 if(isset($_SESSION['password_mismatch']) && isset($_SESSION['password'])){

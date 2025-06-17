@@ -12,6 +12,8 @@
             if ($password == $confirm_password){
                 return true;
             }else {
+                session_start();
+                $_SESSION['password_mismatch'] = true;
                 return false;
             }
         }
@@ -25,8 +27,13 @@
 
             $result = $stmt->get_result();
             if (mysqli_num_rows($result) > 0){
+                $connection->close();
+                
+                session_start();
+                $_SESSION['username_error'] = true;
                 return true;
             }else {
+                $connection->close();
                 return false;
             }
         }
@@ -50,17 +57,11 @@
 
             $connection = $this->getConnection();
 
-            if ($this->checkIfUsernameExists($username) == true){
+            $username_exist = $this->checkIfUsernameExists($username);
+            $password_match = $this->checkIfPasswordMatch($password, $confirm_password); 
+            
+            if ($username_exist == true || $password_match == false){
                 $this->placeInputValuesToSession($firstname, $lastname, $username, $password, $confirm_password);
-                $_SESSION['username_error'] = true;
-            }
-
-            if ($this->checkIfPasswordMatch($password, $confirm_password) == false){
-                $_SESSION['password_mismatch'] = true;
-                $this->placeInputValuesToSession($firstname, $lastname, $username, $password, $confirm_password);
-            }
-
-            if ($this->checkIfUsernameExists($username) || $this->checkIfPasswordMatch($password, $confirm_password)){
                 return;
             }
 
@@ -87,8 +88,9 @@
 
             // Insert new user
             try {
+                $password_hash = password_hash($password, PASSWORD_ARGON2I);
                 $stmt = $connection->prepare("insert into users(user_code, username, firstname, lastname, password) values(?,?,?,?,?)");
-                $stmt->bind_param("sssss",$code, $username, $firstname, $lastname, $password);
+                $stmt->bind_param("sssss",$code, $username, $firstname, $lastname, $password_hash);
                 $stmt->execute();
             } catch (\Throwable $th) {
                 return;
@@ -99,11 +101,6 @@
                 if (isset($connection) && $connection instanceof mysqli){
                     $connection->close();
                 }
-            }
-
-            if ($password != $confirm_password){
-                $this->placeInputValuesToSession($firstname, $lastname, $username, $password, $confirm_password);
-                $_SESSION['password_mismatch'] = true;
             }
         }
     }
