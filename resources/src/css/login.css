@@ -4,6 +4,7 @@
     --dark-green: #0E740E;
     --dark-blue: #08053F;
     --dark-red: #A81212;
+    --text-error-color: #eb0e0e;
     --light-red: #FF8B8B;
 
     --border-color: #BEBEBE;
@@ -75,22 +76,31 @@ main > div {
     gap: 28px;
 }
 
+.login-error {
+    margin-top: 10px;
+    text-align: center;
+    background-color: var(--light-red);
+    color: var(--dark-red);
+}
+
 .hr-line {
     height: 1px;
     width: 100%;
     background-color: var(--text-color);
 }
 
-#input-section form > div > * {
-    display: block;
-}
-
-#input-section form > :first-child,
-#input-section form > :nth-child(2) {
+#input-section form {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
     color: var(--text-color);
     font-size: 14px;
+    gap: 10px;
     font-family: var(--body-font);
-    margin-top: 19px;
+}
+
+#input-section form > div > * {
+    display: block;
 }
 
 #username, 
@@ -107,7 +117,7 @@ main > div {
 
 #submit-btn {
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 15px 0;
     text-align: center;
     width: 100%;

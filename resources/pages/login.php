@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +19,22 @@
                 <p>Login</p>
                 <div class="hr-line"></div>
             </div>
+            <?php 
+                if (isset($_SESSION['login_error'])){
+                    echo '<div class="login-error"><p>Invalid username or password.</p></div>';
+                    session_unset();
+                    session_destroy();
+                }
+            ?>
             <div>
-                <form action="" method="post">
+                <form action="./user/queries.php?action=login" method="post">
                     <div>
                         <label for="username">Username</label>
-                        <input id="username" type="text">
+                        <input id="username" type="text" name="username" required>
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input id="password" type="password" autocomplete="off">
+                        <input id="password" type="password" name="password" autocomplete="off" required>
                     </div>
                     <button type="submit" id="submit-btn">
                         Login
