@@ -3,16 +3,18 @@
         public function addMember($id){
             $connection = $this->getConnection();
 
-            $stmt = $connection->prepare("select user_code as code from users where user_code=? or username=?");
+            $stmt = $connection->prepare("select id as user_id, user_code as code from users where user_code=? or username=?");
             $stmt->bind_param("ss", $id, $id);
             $stmt->execute();
 
             $result = $stmt->get_result();
             if (mysqli_num_rows($result)> 0){
                 try {
-                    $code = mysqli_fetch_assoc($result)['code'];
-                    $insert_stmt = $connection->prepare("insert into members(member_code) values(?)");
-                    $insert_stmt->bind_param("s", $code);
+                    $row = mysqli_fetch_assoc($result);
+                    $user_id = $row['user_id'];
+                    $code = $row['code'];
+                    $insert_stmt = $connection->prepare("insert into members(user_id, member_code) values(?,?)");
+                    $insert_stmt->bind_param("is", $user_id, $code);
                     $insert_stmt->execute();
                 } catch (\Throwable $th) {
                     session_start();
@@ -31,6 +33,52 @@
 
             $connection->close();
             $stmt->close();
+        }
+
+        public function getAllMembers(){
+            $conn = $this->getConnection();
+            $stmt = $conn->prepare('select users.* from members inner join users where members.member_code = user_code order by lastname asc');
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+            if (mysqli_num_rows($result) > 0){
+                while ($row = mysqli_fetch_assoc($result)){
+                    echo '<div class="member">
+                            <div>
+                                <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
+                                <div class="action-btns">
+                                    <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
+                                </div>
+                            </div>
+                        </div>';
+                }
+            }else {
+                echo '<p style="text-align: center; margin-top:20px;">No added members yet.</p>';
+            }
+
+            $conn->close();
+            $stmt->close();
+        }
+
+        public function removeMember($id){
+            $conn = $this->getConnection();
+            try {
+                $stmt = $conn->prepare('delete from members where user_id=?');
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+            } catch (\Throwable $th) {
+                return;
+            } finally {
+                if (isset($conn) && $conn instanceof mysqli){
+                    $conn->close();
+                    echo "conn close";
+                }
+                
+                if (isset($stmt) && $stmt instanceof mysqli_stmt){
+                    $stmt->close();
+                    echo "smtmt close";
+                }
+            }
         }
 
         public function getMembersBasedOnDate($date_id){

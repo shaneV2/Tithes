@@ -14,6 +14,16 @@
 </head>
 <body>
     <div class="main">
+        <div id="warning-modal">
+            <div id="warning-div">
+                <h4>Note:</h4>
+                <p>Confirm removal of this member from the list?</p>
+                <div id="warning-action-btns">
+                    <button id="warning-cancel-btn">No</button>
+                    <button id="warning-delete-btn">Yes</button>
+                </div>
+            </div>
+        </div>
         <header>
             <div>
                 <p>AP</p>
@@ -76,57 +86,11 @@
         <section id="members-section">  
             <p>Members</p>
             <div id="members">
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
-                <div class="member">
-                    <a href="">
-                        <p>Arranguez, Darryl Y.</p>
-                        <div class="arrow-icon">
-                            <img src="../../src/assets/svg/ellipses.svg" alt="arrow">
-                        </div>
-                    </a>
-                </div>
+                <!-- members reflects here -->
             </div>
         </section>
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/members/setupMembersActions.js" type="module"></script>
 </body>
 </html>

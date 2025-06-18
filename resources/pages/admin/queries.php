@@ -20,6 +20,12 @@
                 header("Location: ./members.php");
                 exit();
 
+            case 'remove-member':
+                $id = $_POST['m_id'];
+                $members->removeMember($id);
+                header("Location: ./members.php");
+                exit();
+            
             case 'register-user':
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname'];
@@ -76,6 +82,10 @@
         switch($action) {
             case 'get-dates':
                 $date->getDates();
+                break;
+            
+            case 'get-all-members':
+                $members->getAllMembers();
                 break;
 
             case 'get-members-based-on-date':
