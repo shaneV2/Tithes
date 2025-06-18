@@ -74,7 +74,7 @@
                 $code = 'A';
                 $pad_length = 4;
                 if ($last_five_id == null){
-                    $code .= str_pad((string) 1000000, $pad_length, '0', STR_PAD_LEFT);
+                    $code .= str_pad((string) 1, $pad_length, '0', STR_PAD_LEFT);
                 }else {
                     $new_code_id_string = $last_five_id['id'] + 1;
                     if ($new_code_id_string >= 100){
