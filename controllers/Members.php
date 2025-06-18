@@ -60,6 +60,43 @@
             $stmt->close();
         }
 
+        public function searchMember($keyword){
+            try {
+                $connection = $this->getConnection();
+
+                $search = "%$keyword%";
+                $stmt = $connection->prepare("select * from users inner join members on users.id = members.user_id where user_code like ? or (username like ? or lastname like ?) order by lastname");
+                $stmt->bind_param("sss", $search, $search, $search);
+                $stmt->execute();
+                
+                $result = $stmt->get_result();
+                if (mysqli_num_rows($result)){
+                    while ($row = mysqli_fetch_assoc($result)){
+                        echo '<div class="member">
+                                <div>
+                                    <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
+                                    <div class="action-btns">
+                                        <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
+                                    </div>
+                                </div>
+                            </div>';
+                    }
+                }else {
+                    echo '<p style="text-align: center; margin-top:20px;">Member not found.</p>';
+                }
+            } catch (\Throwable $th) {
+                return;
+            } finally {
+                if (isset($connection) && $connection instanceof mysqli){
+                    $connection->close();
+                }
+                
+                if (isset($stmt) && $stmt instanceof mysqli_stmt){
+                    $stmt->close();
+                }
+            }
+        }
+
         public function removeMember($id){
             $conn = $this->getConnection();
             try {
@@ -71,12 +108,10 @@
             } finally {
                 if (isset($conn) && $conn instanceof mysqli){
                     $conn->close();
-                    echo "conn close";
                 }
                 
                 if (isset($stmt) && $stmt instanceof mysqli_stmt){
                     $stmt->close();
-                    echo "smtmt close";
                 }
             }
         }
