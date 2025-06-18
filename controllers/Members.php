@@ -1,6 +1,10 @@
 <?php 
     class Members extends Database {
         public function addMember($id){
+            if ($id == "" || $id == null){
+                return;
+            }
+
             $connection = $this->getConnection();
 
             $stmt = $connection->prepare("select id as user_id, user_code as code from users where user_code=? or username=?");
@@ -47,7 +51,7 @@
                             <div>
                                 <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
                                 <div class="action-btns">
-                                    <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
+                                    <button class="remove-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
                                 </div>
                             </div>
                         </div>';
@@ -65,7 +69,7 @@
                 $connection = $this->getConnection();
 
                 $search = "%$keyword%";
-                $stmt = $connection->prepare("select * from users inner join members on users.id = members.user_id where user_code like ? or (username like ? or lastname like ?) order by lastname");
+                $stmt = $connection->prepare("select users.* from users inner join members on users.id = members.user_id where user_code like ? or (username like ? or lastname like ?) order by lastname");
                 $stmt->bind_param("sss", $search, $search, $search);
                 $stmt->execute();
                 
@@ -76,7 +80,7 @@
                                 <div>
                                     <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
                                     <div class="action-btns">
-                                        <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
+                                        <button class="remove-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
                                     </div>
                                 </div>
                             </div>';

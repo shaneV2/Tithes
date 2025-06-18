@@ -77,9 +77,14 @@
                 <label for="search-member-input">Search Member</label>
                 <div id="search-code-field">
                     <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Name or user code">
-                    <button id="search-member-btn" type="submit" name="submit" value="true">
-                        <img src="../../src/assets/images/Search.png" width="100%" height="100%" alt="search">
-                    </button>
+                    <div>
+                        <div id="search-member-btn">
+                            <img src="../../src/assets/images/Search.png" width="100%" height="100%" alt="search">
+                        </div>
+                        <div id="close-member-btn">
+                            <img src="../../src/assets/svg/close-search.svg" width="100%" height="100%" alt="search">
+                        </div>
+                    </div>
                 </div>
             </form>
         </section>

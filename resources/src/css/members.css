@@ -134,7 +134,7 @@ header > div > p {
 
 #add-member-form > form {
     display: grid;
-    gap: 26px;
+    gap: 10px;
 }
 
 #user-code-field > * {
@@ -143,18 +143,23 @@ header > div > p {
 }
 
 #user-code-field > label {
-    font-size: 1.1rem;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 #user-code-field > .user-code {
-    padding: 12px 18px;
+    display: flex;
+    border-radius: 5px;
+    outline: none;
+    font-family: var(--body-font);
+    padding: 8px 15px;
     width: 100%;
     box-sizing: border-box;
     border: var(--border-color) 1px solid;
 }
 
 #add-member-btn {
-    padding: 22px;
+    padding: 18px 0;
     background-color: var(--dark-green);
     border: none;
     color: var(--white-text-color);
@@ -169,7 +174,8 @@ header > div > p {
 }
 
 #search-member-section > form > label {
-    font-size: 1.1rem;
+    font-size: 14px;
+    font-weight: 500;
     margin-left: 4px;
     color: var(--text-color);
 }
@@ -181,20 +187,20 @@ header > div > p {
     grid-template-columns: 1fr auto;
     justify-content: space-between;
     width: 100%;
-    gap: 11px;
+    gap: 5px;
 }
 
 #search-code-field .user-code {
     padding-left: 18px;
     border-radius: 5px;
+    outline: none;
     border: var(--border-color) 1px solid;
 }
 
 #search-member-btn {
-    padding: 22px;
+    padding: 10px;
     background-color: var(--dark-blue);
     border: none;
-    padding: 19px 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,28 +213,46 @@ header > div > p {
     object-fit: fill;
 }
 
+#close-member-btn {
+    display: none;
+    padding: 10px;
+    background-color: var(--light-red);
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--body-font);
+    border-radius: 5px;
+}
+
+#close-member-btn > img {
+    object-fit: fill;
+    height: 25px;
+}
+
 /* Members section */
 #members-section {
     font-family: var(--body-font);
-    margin-top: 2.3rem;
+    margin-top: 1.5rem;
     color: var(--text-color);
 }
 
 #members-section > p {
     color: var(--text-color);
-    margin-left: 4px;
-    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 #members {
     display: flex;
     flex-direction: column;
-    height: auto;
-    max-height: 400px;
+    height: 400px;
     overflow-x: auto;
 }
 
 .member {
+    font-size: 14px;
     box-sizing: border-box;
     border-top: 1px solid var(--border-color);
     display: flex;
@@ -268,9 +292,9 @@ header > div > p {
     padding: 10px;
 }
 
-.delete-btn {
+.remove-btn {
     font-family: var(--body-font);
-    font-size: 15px;
+    font-size: 13px;
     padding: 10px;
     border-radius: 2px;
     margin-right: 5px;
