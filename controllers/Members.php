@@ -26,6 +26,7 @@
             } else {
                 session_start();
                 $_SESSION['id_not_found_error'] = true;
+                $_SESSION['identification'] = $id;
             }
 
             $connection->close();

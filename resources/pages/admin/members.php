@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +39,26 @@
         <section id="add-member-section">
             <h2>Add member</h2>
             <div id="add-member-form">
-                <form action="#">
+                <form action="./queries.php?action=add-member" method="post">
                     <div id="user-code-field">
-                        <label for="user-code-input">User Code</label>
-                        <input type="text" id="user-code-input" class="user-code" name="user-code" placeholder="E.g A0001">
+                        <label for="user-code-input">User code or username 
+                            <?php 
+                                if (isset($_SESSION['user_exist_error'])){
+                                    echo "<span style='color: #eb0e0e; font-size: 14px;'>* is already added as member.</span>";
+                                } else if(isset($_SESSION['id_not_found_error'])) {
+                                    echo "<span style='color: #eb0e0e; font-size: 14px;'>* is not found.</span>";
+                                }
+                            ?>
+                        </label>
+                        <input type="text" id="user-code-input" class="user-code" name="id" placeholder="e.g. A0001 or exampleusername.jrcc" value="<?php echo ((isset($_SESSION['user_exist_error']) && isset($_SESSION['identification'])) || isset($_SESSION['id_not_found_error'])) ? $_SESSION['identification'] : "";?>">
                     </div>
                     <button id="add-member-btn" type="submit" name="submit" value="true">Add Member</button>
+                    <?php 
+                        if (isset($_SESSION['user_exist_error']) || isset($_SESSION['id_not_found_error'])){
+                            session_unset();
+                            session_destroy();
+                        }
+                    ?>
                 </form>
             </div>
         </section>

@@ -14,6 +14,12 @@
         $action = $_GET['action'];
         
         switch($action){
+            case 'add-member':
+                $id = $_POST['id'];
+                $members->addMember($id);
+                header("Location: ./members.php");
+                exit();
+
             case 'register-user':
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname'];
