@@ -110,7 +110,7 @@
         </section>
         <div id="warning-modal">
             <div id="warning-div">
-                <h4>WARNING:</h4>
+                <h4>WARNING!!!</h4>
                 <p>This action will permanently remove records associated with this date. Are you sure you want to proceed?</p>
                 <div id="warning-action-btns">
                     <button id="warning-cancel-btn">Cancel</button>
@@ -119,7 +119,7 @@
             </div>
         </div>
         <section id="members-section">  
-            <p>Members</p>
+            <p>Contributors</p>
             <div id="members">
             </div>
         </section>

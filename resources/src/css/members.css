@@ -251,6 +251,10 @@ header > div > p {
     overflow-x: auto;
 }
 
+#members > p {
+    font-size: 14px;
+}
+
 .member {
     font-size: 14px;
     box-sizing: border-box;
@@ -295,6 +299,7 @@ header > div > p {
 .remove-btn {
     font-family: var(--body-font);
     font-size: 13px;
+    font-weight: 500;
     padding: 10px;
     border-radius: 2px;
     margin-right: 5px;
@@ -318,20 +323,27 @@ header > div > p {
 }
 #warning-div {
     min-width: 355px;
-    max-width: 500px;
+    max-width: 250px;
     width: 50%;
     background-color: white;
     display: flex;
     font-family: var(--body-font);
     flex-direction: column;
     gap: 20px;
-    padding: 14px;
+    padding: 15px 20px 14px;
     text-align: center;
     border: var(--border-color) 1px solid;
+    border-radius: 20px;
 }
 
 #warning-div > h4 {
+    border-bottom: 1px solid var(--border-color);
     font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#warning-div > p {
+    font-size: 14px;
 }
 
 #warning-action-btns {

@@ -63,7 +63,7 @@
             <div id="add-date-btn">
                 <button>Add Date</button>
                 <div id="add-btn-img">
-                    <img src="../../src/assets/images/plus.png" alt="">
+                    <img height="20px" width="20px" src="../../src/assets/images/plus.png" alt="">
                 </div>
             </div>
         </section>
@@ -125,7 +125,7 @@
                 </div>
                 <div id="submit-btn">
                     <p>
-                        <img src="../../src/assets/images/Filter.png" alt="filter image">
+                        <img  height="20px" width="20px" src="../../src/assets/images/Filter.png" alt="filter image">
                     </p>
                 </div>
             </form>

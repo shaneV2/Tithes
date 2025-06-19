@@ -1,3 +1,3 @@
 <?php 
-    header("Location: ./resources/pages/admin/members.php")
+    header("Location: ./resources/pages/admin/giving.php")
 ?>

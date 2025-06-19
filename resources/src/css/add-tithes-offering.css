@@ -139,7 +139,7 @@ select {
 }
 
 #add-tithes-section > p {
-    font-size: 28px;
+    font-size: 22px;
     font-family: var(--header-font);
 }
 
@@ -170,6 +170,7 @@ select {
 
 #add-tithes-form > #offerings-input-field > div > label {
     margin-left: 2px;
+    font-size: 14px;
 }
 
 #add-tithes-form input {
@@ -177,6 +178,7 @@ select {
     outline: none;
     font-family: var(--body-font);
     flex-flow: column;
+    font-size: 13px;
     border: var(--border-color) 1px solid;
     border-radius: 5px;
     padding: 13px;
@@ -195,6 +197,7 @@ select {
     border-top: 1px solid var(--border-color);
 }
 #add-tithes-form > #digits > div {
+    font-size: 12px;
     display: flex;
     gap: 5px;
 }
@@ -217,11 +220,12 @@ select {
 }
 
 #add-tithes-btn > div > p {
-    font-size: 28px;
+    font-size: 22px;
 }
 
 #add-tithes-btn > button {
-    padding: 26px 0;
+    padding: 15px 0;
+    font-family: var(--body-font);
     text-align: center;
     background-color: var(--dark-green);
     border: none;
@@ -229,7 +233,12 @@ select {
     margin-top: 13px;
 }
 
-#error > p{
+#add-tithes-btn > div > label {
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+#error > p {
     text-align: center;
     display: none;
     color: red;
