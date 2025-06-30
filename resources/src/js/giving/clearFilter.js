@@ -1,3 +1,5 @@
+import resetDropdowns from "../selectDate.js"
+
 export default function clearFilter(){
     const month = document.getElementById("month")
     const year = document.getElementById("year")
@@ -15,5 +17,6 @@ export default function clearFilter(){
         }
     }
 
+    resetDropdowns()
     request()
 }

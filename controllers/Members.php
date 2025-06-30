@@ -69,8 +69,8 @@
                 $connection = $this->getConnection();
 
                 $search = "%$keyword%";
-                $stmt = $connection->prepare("select users.* from users inner join members on users.id = members.user_id where user_code like ? or (username like ? or lastname like ?) order by lastname");
-                $stmt->bind_param("sss", $search, $search, $search);
+                $stmt = $connection->prepare("select users.* from users inner join members on users.id = members.user_id where (firstname like ? or lastname like ?) order by lastname");
+                $stmt->bind_param("ss", $search, $search);
                 $stmt->execute();
                 
                 $result = $stmt->get_result();

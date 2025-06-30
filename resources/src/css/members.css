@@ -54,6 +54,7 @@ header,
     padding: 39px 32px;
     position: absolute;
     inset: 0;
+    display: none;
 }
 
 #navigation-pane > div {

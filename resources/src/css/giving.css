@@ -53,6 +53,7 @@ header,
     padding: 39px 32px;
     position: absolute;
     inset: 0;
+    display: none;
 }
 
 #navigation-pane > div {
@@ -264,7 +265,7 @@ select {
 }
 
 #date-section > div:not(#select-date-header){
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
 }

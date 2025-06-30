@@ -73,11 +73,11 @@
             </div>
         </section>
         <section id="search-member-section">
-            <form action="#">
+            <form action="#" id="search-member-form">
                 <label for="search-member-input">Search Member</label>
                 <div id="search-code-field">
-                    <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Name or user code">
-                    <div>
+                    <input type="text" id="search-member-input" class="user-code" name="user-code" placeholder="Firstname or lastname">
+                    <div id="icon-wrapper">
                         <div id="search-member-btn">
                             <img src="../../src/assets/images/Search.png" width="100%" height="100%" alt="search">
                         </div>
@@ -97,5 +97,6 @@
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
     <script src="../../src/js/members/setupMembersActions.js" type="module"></script>
+    <script src="../../src/js/members/toggleIconInSearch.js" type="module"></script>
 </body>
 </html>
