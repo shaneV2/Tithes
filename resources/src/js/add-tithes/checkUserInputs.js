@@ -7,8 +7,6 @@ export default function checkIfTotalOfferingsAndDenominationsTotalAreEqual(){
     if (error_div == null) error_div = document.getElementById('error').firstChild;
     if (submit_button == null) submit_button = document.getElementById('submit-btn')
 
-    console.log("Total offering: " + total_offerings)
-    console.log("Denominations total: " + total_denominations)
     if (total_offerings != total_denominations){
         error_div.style.display = "block"
         submit_button.disabled = true;

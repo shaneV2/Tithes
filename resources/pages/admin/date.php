@@ -91,6 +91,7 @@
                         <img src="../../src/assets/images/close.png" height="100%" width="100%" alt="">
                     </div>
                 </div>
+                <div id="shares-table"></div>
             </div>
         </section>
         <section id="total-tithes-offering-section">

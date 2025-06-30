@@ -126,7 +126,7 @@ header > div > p {
 }
 
 #shares-modal {
-    display: none;
+    display: none;  
     position: fixed;
     align-items: center;
     height: 100lvh;
@@ -152,6 +152,24 @@ header > div > p {
     justify-content: space-between;
 }
 
+#input-pastor-number {
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    font-family: var(--body-font);
+    border: 1px solid var(--border-color);
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #shares-close-btn {
     height: 30px;
     width: 30px;
@@ -169,11 +187,11 @@ header > div > p {
     font-size: 28px;
 }
 
-#user-offer-modal  > #inner-modal > table,
-#shares-modal  > #inner-modal > table {
+#shares-table > table {
     font-family: var(--body-font);
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 #inner-modal td,
@@ -181,7 +199,14 @@ header > div > p {
     font-size: 14px;
     text-align: center;
     border: black 1px solid;
-    padding: 10px;
+    padding: 5px;
+}
+
+#inner-modal tr:nth-child(1) > th, 
+#inner-modal tr:nth-child(2) > td{
+    font-size: 14px;
+    border: black 1px solid;
+    padding: 15px;
 }
 
 /* Total tithes and Offering section */

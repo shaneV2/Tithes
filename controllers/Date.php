@@ -240,18 +240,27 @@
                 $row = mysqli_fetch_assoc($result);
                 
                 $total_share = $row['tithes_total'] + $row['mission_total'] + $row['omg_total'] + $row['pledges_total'] + $row['donation_total'];
-                $pastor_share = $total_share / 4;
+                $pastor_share = $total_share * 0.20;
+                $church_share = $total_share - $pastor_share;
             }   
-            echo '<table>
+            echo '<table >
                     <tr>
-                        <th>Pastors</th>
-                        <th>Pastor Share</th>
+                        <th colspan="3">Church\'s Share</th>
                         <th>Total</th>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>'. $pastor_share .'</td>
-                        <td>'. $total_share .'</td>
+                        <td colspan="3">'. $church_share .'</td>
+                        <td rowspan="3">'. $total_share .'</td>
+                    </tr>
+                    <tr>
+                        <th>Pastors</th>
+                        <th>Pastor Share</th>
+                        <th>Pastor Share Total</th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="input-pastor-number" value="0"></td>
+                        <td><p id="pastor_shares">'. $pastor_share .'</p></td>
+                        <td><p id="pastor_shares_total">'. $pastor_share .'</p></td>
                     </tr>
                 </table>';
 
