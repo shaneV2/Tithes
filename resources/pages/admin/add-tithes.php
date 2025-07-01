@@ -53,9 +53,16 @@
                     <input style="display: none;" type="text" name="end_date" value="<?php echo $end_date;?>">
                 </div>
                 <div id="offerings-input-field">
-                    <div>
+                    <div id="name-input-section">
                         <label for="name">Name</label>
-                        <input id="name" type="text" name="username" required autofocus>
+                        <input id="name" type="text" name="username" required autofocus autocomplete="off">
+                        <div id="name-fill-section">
+                            <p>Arranguez, Shane</p>
+                            <p>Arranguez, Darryl</p>
+                            <p>Doe, John</p>
+                            <p>Rose, Dorthy</p>
+                            <p>Cinamon, Bun</p>
+                        </div>
                     </div>
                     <div>
                         <label for="tithes">Tithes</label>

@@ -161,4 +161,25 @@
             $stmt->close();
             $denominations_stmt->close();
         }
+
+        public function getMembersOnUserInputForNameSuggestion($user_input){
+            $connection = $this->getConnection();
+
+            $search = "%$user_input%";
+            $stmt = $connection->prepare("select users.* from users inner join members on users.user_code = members.member_code where (firstname like ? or lastname like ?) order by lastname");
+            $stmt->bind_param("ss", $search, $search);
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+            if (mysqli_num_rows($result) > 0){
+                while ($row = mysqli_fetch_assoc($result)){
+                    echo "<p>". $row['lastname'] . ", ". $row['firstname'] ."</p>";
+                }
+            }else {
+                echo "none";
+            }
+
+            $stmt->close();
+            $connection->close();
+        }
     }

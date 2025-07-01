@@ -187,6 +187,35 @@ select {
     box-sizing: border-box;
 }
 
+#name-input-section {
+    position: relative;
+}
+
+#name-fill-section {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    word-break: break-all;
+    top: 75px;
+    border: var(--border-color) 1px solid;
+    background-color: white;
+}
+
+#name-fill-section > p {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+#name-fill-section > p:hover,
+#name-fill-section > p:active {
+    background-color: var(--back-btn-bg-color);
+}
+
+#name-fill-section > p:last-child {
+    border-bottom: none;
+}
+
 #add-tithes-form > :first-child {
     margin-top: 10px;
 }
