@@ -57,11 +57,7 @@
                         <label for="name">Name</label>
                         <input id="name" type="text" name="username" required autofocus autocomplete="off">
                         <div id="name-fill-section">
-                            <p>Arranguez, Shane</p>
-                            <p>Arranguez, Darryl</p>
-                            <p>Doe, John</p>
-                            <p>Rose, Dorthy</p>
-                            <p>Cinamon, Bun</p>
+                            <!-- suggested names appear here -->
                         </div>
                     </div>
                     <div>
@@ -138,5 +134,6 @@
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
     <script src="../../src/js/add-tithes/checkUserInputs.js" type="module"></script>
+    <script src="../../src/js/add-tithes/getMembersSuggestionOnUserInput.js" type="module"></script>
 </body>
 </html>

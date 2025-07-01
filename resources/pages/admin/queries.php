@@ -95,6 +95,11 @@
             case 'get-members-based-on-date':
                 $members->getMembersBasedOnDate($date_id);
                 break;
+
+            case 'get-members-for-suggestion':
+                $keyword = $_GET['keyword'];
+                $members->getMembersOnUserInputForNameSuggestion($keyword);
+                break;
             
             case 'view-shares':
                 $date->getShares($date_id);

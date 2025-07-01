@@ -175,8 +175,6 @@
                 while ($row = mysqli_fetch_assoc($result)){
                     echo "<p>". $row['lastname'] . ", ". $row['firstname'] ."</p>";
                 }
-            }else {
-                echo "none";
             }
 
             $stmt->close();
