@@ -7,7 +7,7 @@
 
             $connection = $this->getConnection();
 
-            $stmt = $connection->prepare("select id as user_id, user_code as code from users where user_code=? or username=?");
+            $stmt = $connection->prepare("select id as user_id, user_code as code, firstname, lastname from users where user_code=? or username=?");
             $stmt->bind_param("ss", $id, $id);
             $stmt->execute();
 
@@ -17,8 +17,9 @@
                     $row = mysqli_fetch_assoc($result);
                     $user_id = $row['user_id'];
                     $code = $row['code'];
-                    $insert_stmt = $connection->prepare("insert into members(user_id, member_code) values(?,?)");
-                    $insert_stmt->bind_param("is", $user_id, $code);
+                    $fullname = $row['firstname'] . " " . $row['lastname'];
+                    $insert_stmt = $connection->prepare("insert into members(user_id, member_code, fullname) values(?,?,?)");
+                    $insert_stmt->bind_param("iss", $user_id, $code, $fullname);
                     $insert_stmt->execute();
                 } catch (\Throwable $th) {
                     session_start();
@@ -166,14 +167,23 @@
             $connection = $this->getConnection();
 
             $search = "%$user_input%";
-            $stmt = $connection->prepare("select users.* from users inner join members on users.user_code = members.member_code where (firstname like ? or lastname like ?) order by lastname");
-            $stmt->bind_param("ss", $search, $search);
-            $stmt->execute();
+            $starts_with = "$user_input%";
+
+            $query = "select * from members
+                        where fullname like ? 
+                        order by  
+                            case 
+                                when fullname like ? then 0
+                                else 1
+                            end
+                        limit 5";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$search, $starts_with]);
 
             $result = $stmt->get_result();
             if (mysqli_num_rows($result) > 0){
                 while ($row = mysqli_fetch_assoc($result)){
-                    echo "<p>". $row['lastname'] . ", ". $row['firstname'] ."</p>";
+                    echo "<p m_id=". $row['id'] .">". $row['fullname'] ."</p>";
                 }
             }
 

@@ -3,6 +3,7 @@
     --light-green: #7FE77F;
     --dark-green: #0E740E;
     --dark-blue: #08053F;
+    --yellow: #eed202;
 
     --border-color: #BEBEBE;
 
@@ -205,6 +206,26 @@ select {
     padding: 10px;
     border-bottom: 1px solid var(--border-color);
     font-size: 14px;
+}
+
+#name-container {
+    display: flex;
+    gap: 7px;
+}
+
+#status {
+    display: flex;
+    align-items: center;
+}
+
+#dummy-status {
+    height: 2.5px;
+    width: 9.5px;
+    background-color: var(--yellow);
+}
+
+#status-img-user-added {
+    display: none;
 }
 
 #name-fill-section > p:hover,

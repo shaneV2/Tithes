@@ -92,11 +92,18 @@
                 $stmt = $connection->prepare("insert into users(user_code, username, firstname, lastname, password) values(?,?,?,?,?)");
                 $stmt->bind_param("sssss",$code, $username, $firstname, $lastname, $password_hash);
                 $stmt->execute();
+
+                $saving_stmt = $connection->prepare("insert into savings(user_code) values(?)");
+                $saving_stmt->bind_param("s", $code);
+                $saving_stmt->execute();
             } catch (\Throwable $th) {
                 return;
             }finally {
                 if (isset($stmt) && $stmt instanceof mysqli_stmt){
                     $stmt->close();
+                }
+                if (isset($saving_stmt) && $saving_stmt instanceof mysqli_stmt){
+                    $saving_stmt->close();
                 }
                 if (isset($connection) && $connection instanceof mysqli){
                     $connection->close();

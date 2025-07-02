@@ -51,10 +51,11 @@
                     <input style="display: none;" type="text" name="date_id" value="<?php echo $date_id;?>">
                     <input style="display: none;" type="text" name="start_date" value="<?php echo $start_date;?>">
                     <input style="display: none;" type="text" name="end_date" value="<?php echo $end_date;?>">
+                    <input id="m_id" type="text" name="m_id">
                 </div>
                 <div id="offerings-input-field">
                     <div id="name-input-section">
-                        <label for="name">Name</label>
+                        <label for="name" id="name-container">Name <span id="status"><div id="dummy-status"> </div><img height="14" id="status-img-user-added" src="../../src/assets/svg/check.svg" alt=""></span></label>
                         <input id="name" type="text" name="username" required autofocus autocomplete="off">
                         <div id="name-fill-section">
                             <!-- suggested names appear here -->
