@@ -453,10 +453,25 @@ select {
 .date {
     border-top: 1px solid var(--border-color);
     display: flex;
-    gap: 0px;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
+}
+
+.date > a {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.date > a > p > span:first-child {
+    font-weight: 600;
+}
+
+.date > a > p:last-child {
+    word-break: break-all;
+    max-width: 50%;
 }
 
 .date:last-child {

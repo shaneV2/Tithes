@@ -33,7 +33,11 @@
         
         public function getDates(){
             $conn = $this->getConnection();
-            $query = "select * from dates order by id desc";
+            $query = "select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) 
+                        as total_amount from dates as d 
+                        left join user_offers as uo on d.id = uo.date_id 
+                        group by d.id 
+                        order by d.id desc";
             $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result) == 0){
@@ -46,11 +50,13 @@
 
                     $formatted_sd = $start_date->format("F j, Y"); 
                     $formatted_ed = $end_date->format("F j, Y"); 
+                    $amount = number_format($row['total_amount']);
 
                     $formatted = $formatted_sd . " - " . $formatted_ed;
                     echo '<div class="date">
                             <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'">
                                 <p>'. $formatted .'</p>
+                                <p><span>Amount: </span><span>PHP '. $amount .'</span></p>
                             </a>
                             <div>
                                 <p class="delete-btn" did="'. $date_id .'" type="date">Delete</p>
@@ -164,53 +170,53 @@
             echo '<table id="tithes-table">
                 <tr>
                     <td>1000</td>
-                    <td>'. ($thousands ?? 0) .'</td>
-                    <td>'. $thousands_total .'</td>
+                    <td>'. number_format(($thousands ?? 0)) .'</td>
+                    <td>'. number_format($thousands_total) .'</td>
                 </tr>
                 <tr>
                     <td>500</td>
-                    <td>'. ($five_hundreds ?? 0) .'</td>
-                    <td>'. $five_hundreds_total .'</td>
+                    <td>'. number_format(($five_hundreds ?? 0)) .'</td>
+                    <td>'. number_format($five_hundreds_total) .'</td>
                 </tr>
                 <tr>
                     <td>200</td>
-                    <td>'. ($two_hundreds ?? 0).'</td>
-                    <td>'. $two_hundreds_total .'</td>
+                    <td>'. number_format(($two_hundreds ?? 0)).'</td>
+                    <td>'. number_format($two_hundreds_total) .'</td>
                 </tr>
                 <tr>
                     <td>100</td>
-                    <td>'. ($hundreds ?? 0) .'</td>
-                    <td>'. $hundreds_total .'</td>
+                    <td>'. number_format(($hundreds ?? 0)) .'</td>
+                    <td>'. number_format($hundreds_total) .'</td>
                 </tr>
                 <tr>
                     <td>50</td>
-                    <td>'. ($fifties ?? 0) .'</td>
-                    <td>'. $fifties_total .'</td>
+                    <td>'. number_format(($fifties ?? 0)) .'</td>
+                    <td>'. number_format($fifties_total) .'</td>
                 </tr>
                 <tr>
                     <td>20</td>
-                    <td>'. ($twenties ?? 0) .'</td>
-                    <td>'. $twenties_total .'</td>
+                    <td>'. number_format(($twenties ?? 0)) .'</td>
+                    <td>'. number_format($twenties_total) .'</td>
                 </tr>
                 <tr>
                     <td>10</td>
-                    <td>'. ($tens ?? 0) .'</td>
-                    <td>'. $tens_total .'</td>
+                    <td>'. number_format(($tens ?? 0)) .'</td>
+                    <td>'. number_format($tens_total) .'</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>'. ($fives ?? 0) .'</td>
-                    <td>'. $fives_total .'</td>
+                    <td>'. number_format(($fives ?? 0)) .'</td>
+                    <td>'. number_format($fives_total) .'</td>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>'. ($ones ?? 0) .'</td>
-                    <td>'. $ones_total .'</td>
+                    <td>'. number_format(($ones ?? 0)) .'</td>
+                    <td>'. number_format($ones_total) .'</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Total</td>
-                    <td>'. ($total ?? 0) .'</td>
+                    <td>'. number_format(($total ?? 0)) .'</td>
                 </tr></table>';
             
             $conn->close();
@@ -239,7 +245,12 @@
             if (mysqli_num_rows($result) > 0){
                 $row = mysqli_fetch_assoc($result);
                 
-                $total_share = $row['tithes_total'] + $row['mission_total'] + $row['omg_total'] + $row['pledges_total'] + $row['donation_total'];
+                $total_share = 
+                    (float) ($row['tithes_total'] ?? 0) +
+                    (float) ($row['mission_total'] ?? 0) +
+                    (float) ($row['omg_total'] ?? 0) +
+                    (float) ($row['pledges_total'] ?? 0) +
+                    (float) ($row['donation_total'] ?? 0);
                 $pastor_share = $total_share * 0.20;
                 $church_share = $total_share - $pastor_share;
             }   
@@ -249,8 +260,8 @@
                         <th>Total</th>
                     </tr>
                     <tr>
-                        <td colspan="3">'. $church_share .'</td>
-                        <td rowspan="3">'. $total_share .'</td>
+                        <td colspan="3">'. number_format($church_share) .'</td>
+                        <td rowspan="3">'. number_format($total_share) .'</td>
                     </tr>
                     <tr>
                         <th>Pastors</th>
@@ -259,8 +270,8 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="input-pastor-number" value="0"></td>
-                        <td><p id="pastor_shares">'. $pastor_share .'</p></td>
-                        <td><p id="pastor_shares_total">'. $pastor_share .'</p></td>
+                        <td><p id="pastor_shares">'. number_format($pastor_share) .'</p></td>
+                        <td><p id="pastor_shares_total">'. number_format($pastor_share) .'</p></td>
                     </tr>
                 </table>';
 

@@ -143,6 +143,7 @@
         <section id="date-list-section">  
             <p>Date List</p>
             <div id="date-list">
+                <!-- dates reflects here -->
             </div>
         </section>
     </div>

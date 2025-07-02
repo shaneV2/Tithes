@@ -46,6 +46,7 @@ header,
 }
 
 #navigation-pane {
+    display: none;
     color: var(--text-color);
     z-index: 100;
     box-sizing: border-box;
@@ -314,6 +315,7 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
     border-top: 1px solid var(--border-color);
     display: flex;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
 }
@@ -322,13 +324,29 @@ input::-webkit-inner-spin-button {
     border-bottom: 1px solid var(--border-color);
 }
 
-.member > a {
+.member > div:first-child {
     padding: 10px 0 10px 12px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     text-decoration: none;
     color: var(--text-color);
+}
+
+.member > div > p:last-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.member > div > p > span:first-child {
+    font-weight: 600;
+}
+
+.member > div > p:last-child {
+    word-break: break-all;
+    max-width: 50%;
 }
 
 .action-btns {

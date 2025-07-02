@@ -123,7 +123,7 @@
 
         public function getMembersBasedOnDate($date_id){
             $conn = $this->getConnection();
-            $stmt = $conn->prepare('select * from user_offers where date_id = ? order by id desc');
+            $stmt = $conn->prepare('select *, coalesce(sum(tithes + mission + omg + pledges + donation), 0) as total_amount from user_offers where date_id = ?  group by id order by id desc');
             $stmt->bind_param('i', $date_id);
             $stmt->execute();
 
@@ -131,9 +131,10 @@
             if (mysqli_num_rows($result) > 0){
                 while ($row = mysqli_fetch_assoc($result)){
                     echo '<div class="member">
-                            <a href="">
+                            <div>
                                 <p>'. $row['user_name'] .'</p>
-                            </a>
+                                <p><span>Amount: </span><span>PHP '. number_format($row['total_amount']) .'</span></p>
+                            </div>
                             <div class="action-btns">
                                 <a href="" class="edit-btn">Edit</a>
                                 <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Delete</button>
