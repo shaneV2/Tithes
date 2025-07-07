@@ -72,7 +72,7 @@
             $month_number = date("n", strtotime($month));
             
             $conn = $this->getConnection();
-            $stmt = $conn->prepare("select * from dates where MONTH(start_date)=? and YEAR(start_date)=? order by start_date asc");
+            $stmt = $conn->prepare("select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from dates as d inner join user_offers as uo on d.id = uo.date_id where MONTH(start_date)=? and YEAR(start_date)=? group by d.id order by start_date asc");
             $stmt->bind_param("ii", $month_number, $year);
             $stmt->execute();
 
@@ -91,10 +91,13 @@
                     $formatted_sd = $start_date->format("F j, Y"); 
                     $formatted_ed = $end_date->format("F j, Y"); 
 
+                    $amount = number_format($row['total_amount']);
+
                     $formatted = $formatted_sd . " - " . $formatted_ed;
                     echo '<div class="date">
                             <a href="./date.php?d_id='. $date_id .'&start_date='. $formatted_sd .'&end_date='. $formatted_ed .'&fromFilter=true&month='. $month .'&year='. $year .'">
                                 <p>'. $formatted .'</p>
+                                <p><span>Amount: </span><span>PHP '. $amount .'</span></p>
                             </a>
                             <div>
                                 <p class="delete-btn" did="'. $date_id .'" type="date">Delete</p>
