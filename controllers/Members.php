@@ -151,6 +151,13 @@
 
         public function deleteMemberBasedOnDate($md_id){
             $conn = $this->getConnection();
+            
+            // Update savings when user offer is deleted
+            $update_savings_stmt = $conn->prepare("update savings inner join members on savings.user_code = members.member_code inner join user_offers on user_offers.user_id = members.user_id set savings.amount = savings.amount - 1000 where user_offers.id = ?");
+            $update_savings_stmt->bind_param("i", $md_id);
+            $update_savings_stmt->execute();
+            $update_savings_stmt->close();
+
             $stmt = $conn->prepare('delete from user_offers where id=?');
             $stmt->bind_param('i', $md_id);
             $stmt->execute();
@@ -158,7 +165,7 @@
             $denominations_stmt = $conn->prepare('delete from denominations where id=?');
             $denominations_stmt->bind_param('i', $md_id);
             $denominations_stmt->execute();
-
+            
             $conn->close();
             $stmt->close();
             $denominations_stmt->close();
@@ -184,7 +191,7 @@
             $result = $stmt->get_result();
             if (mysqli_num_rows($result) > 0){
                 while ($row = mysqli_fetch_assoc($result)){
-                    echo "<p m_id=". $row['id'] .">". $row['fullname'] ."</p>";
+                    echo "<p m_id=". $row['user_id'] .">". $row['fullname'] ."</p>";
                 }
             }
 

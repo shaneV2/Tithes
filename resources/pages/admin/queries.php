@@ -54,12 +54,13 @@
                 $pledges = empty($_POST['pledges']) ? 0 : $_POST['pledges'];
                 $donation = empty($_POST['donation']) ? 0 : $_POST['donation'];
                 
+                $m_id = $_POST['m_id']; 
                 $username = $_POST['username'];
                 $tithes_and_offerings = [$tithes, $mission, $omg, $pledges, $donation];
                 $denominations = $_POST['denominations'];
                 $date_id = $_POST['date_id'];
 
-                $offerings->addUserOffering($username, $date_id, $tithes_and_offerings, $denominations);
+                $offerings->addUserOffering($m_id, $username, $date_id, $tithes_and_offerings, $denominations);
                 header("Location: date.php?d_id=". $date_id ."&start_date=". $start_date ."&end_date=". $end_date);
                 exit();
             

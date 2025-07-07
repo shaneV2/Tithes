@@ -1,12 +1,12 @@
 <?php 
     class Offerings extends Database {
-        public function addUserOffering($username, $date_id, $tithes_and_offerings, $denominations){
+        public function addUserOffering($id, $username, $date_id, $tithes_and_offerings, $denominations){
             $conn = $this->getConnection();
             [$tithes, $mission, $omg, $pledges, $donation] = $tithes_and_offerings;
 
             // User offers query
-            $stmt = $conn->prepare("insert into user_offers(`user_name`, `tithes`, `mission`, `omg`, `pledges`, `donation`, `date_id`) values(?,?,?,?,?,?,?);");
-            $stmt->bind_param("siiiiii", $username, $tithes, $mission, $omg, $pledges, $donation, $date_id);
+            $stmt = $conn->prepare("insert into user_offers(`user_id`, `user_name`, `tithes`, `mission`, `omg`, `pledges`, `donation`, `date_id`) values(?,?,?,?,?,?,?,?);");
+            $stmt->bind_param("isiiiiii", $id, $username, $tithes, $mission, $omg, $pledges, $donation, $date_id);
             $stmt->execute();
 
             // Denominations query
@@ -23,6 +23,14 @@
             $stmt = $conn->prepare("insert into denominations(`thousands`, `five_hundreds`, `two_hundreds`, `hundreds`, `fifties`, `twenties`, `tens`, `fives`, `ones`, `date_id`) values(?,?,?,?,?,?,?,?,?,?);");
             $stmt->bind_param("iiiiiiiiis", $thousands, $five_hundreds, $two_hundreds, $hundreds, $fifties, $twenties, $tens, $fives, $ones, $date_id);
             $stmt->execute();
+
+            if ($id != null || !empty($id)){
+                $total_amount = ($thousands * 1000) + ($five_hundreds * 500) + ($two_hundreds * 200) + ($hundreds * 100) + ($fifties * 50) + ($twenties * 20) + ($tens * 10) + ($fives * 5) + ($ones * 1);
+                $update_savings_stmt = $conn->prepare("update savings inner join members on savings.user_code = members.member_code set savings.amount = savings.amount + ? where members.user_id = ?");
+                $update_savings_stmt->bind_param('ii', $total_amount, $id);
+                $update_savings_stmt->execute();
+                $update_savings_stmt->close(); 
+            }
 
             $conn->close();
             $stmt->close();
