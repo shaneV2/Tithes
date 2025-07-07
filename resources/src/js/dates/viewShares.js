@@ -21,16 +21,18 @@ export default async function getShares() {
 }
 
 export function calculateSharesBasedOnNumberOfPastors(numberOfPastors){
-    const pastor_shares = document.getElementById("pastor_shares");
+    const pastor_shares_div = document.getElementById("pastor_shares");
     const pastor_shares_total = document.getElementById("pastor_shares_total").innerText;
 
-    console.log(numberOfPastors)
+    const pastor_shares_total_integer = parseInt(pastor_shares_total.replace(/,/g, ''))
 
-    if (numberOfPastors == 0 || numberOfPastors == null){
-        pastor_shares.innerText = pastor_shares_total
+    if (numberOfPastors <= 0 || numberOfPastors == null){
+        let formatted_total_shares = pastor_shares_total_integer.toLocaleString()
+        pastor_shares_div.innerText = formatted_total_shares
         return
     }
 
-    let shares = Math.floor(pastor_shares_total / numberOfPastors)
-    pastor_shares.innerText = shares
+    let shares = Math.floor(pastor_shares_total_integer / numberOfPastors)
+    let formatted_shares = shares.toLocaleString();
+    pastor_shares_div.innerText = formatted_shares 
 }
