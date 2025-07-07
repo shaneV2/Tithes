@@ -83,17 +83,8 @@
                 <button class="month-btn">December</button>
             </div>
             <div id="years-options">
-                <div>
-                    <button class="year-btn">2025</button>
-                    <button class="year-btn">2002</button>
-                    <button class="year-btn">2003</button>
-                    <button class="year-btn">2004</button>
-                    <button class="year-btn">2005</button>
-                    <button class="year-btn">2006</button>
-                    <button class="year-btn">2007</button>
-                    <button class="year-btn">2008</button>
-                    <button class="year-btn">2009</button>
-                    <button class="year-btn">2010</button>
+                <div id="years-options-wrapper">
+                    <!-- Years set here -->
                 </div>
             </div>
             <div id="select-date-header">
