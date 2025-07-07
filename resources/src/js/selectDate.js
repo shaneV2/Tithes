@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     month_options.style.display = "none";
     year_options.style.display = "none";
 
-    month_container.addEventListener("click", () => {
+    month_container.addEventListener("click", (e) => {
+        e.stopPropagation()
         if (isMonthOptionOpen){
             month_options.style.display = "none";
             isMonthOptionOpen = false
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    year_container.addEventListener("click", () => {
+    year_container.addEventListener("click", (e) => {
+        e.stopPropagation()
         if (isYearOptionOpen){
             year_options.style.display = "none";
             isYearOptionOpen = false

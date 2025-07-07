@@ -144,6 +144,7 @@
     <script src="../../src/js/giving/addDate.js" type="module"></script>
     <script src="../../src/js/selectDate.js" type="module"></script>
     <script src="../../src/js/giving/useDateActions.js" type="module"></script>
+    <script src="../../src/js/closeDateOptionsOnDocumentClick.js" type="module"></script>
     <script src="../../src/js/giving/useFilter.js" type="module"></script>
 </body>
 </html>
