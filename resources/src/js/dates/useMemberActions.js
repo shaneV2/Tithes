@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 async function deleteDateMember() {
-    const filepath = "./queries.php?action=delete-date-member";  
+    const filepath = "./queries.php?action=delete-date-member";
     try {
         const response = await fetch(filepath, {
             method: "POST",

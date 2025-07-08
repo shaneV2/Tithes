@@ -151,10 +151,18 @@
 
         public function deleteMemberBasedOnDate($md_id){
             $conn = $this->getConnection();
-            
+
+            // Get user offering amount on specific contribution
+            $get_user_amount_stmt = $conn->prepare("select coalesce(sum(tithes + mission + omg + pledges + donation), 0) as total_amount from user_offers where id = ?");
+            $get_user_amount_stmt->bind_param("i", $md_id);
+            $get_user_amount_stmt->execute();
+            $result = $get_user_amount_stmt->get_result();
+            $amount = (int) mysqli_fetch_assoc($result)['total_amount']; // user contribution amount
+            $get_user_amount_stmt->close();
+
             // Update savings when user offer is deleted
-            $update_savings_stmt = $conn->prepare("update savings inner join members on savings.user_code = members.member_code inner join user_offers on user_offers.user_id = members.user_id set savings.amount = savings.amount - 1000 where user_offers.id = ?");
-            $update_savings_stmt->bind_param("i", $md_id);
+            $update_savings_stmt = $conn->prepare("update savings inner join members on savings.user_code = members.member_code inner join user_offers on user_offers.user_id = members.user_id set savings.amount = savings.amount - ? where user_offers.id = ?");
+            $update_savings_stmt->bind_param("ii", $amount, $md_id);
             $update_savings_stmt->execute();
             $update_savings_stmt->close();
 
