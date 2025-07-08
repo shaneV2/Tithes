@@ -152,8 +152,8 @@
         public function deleteMemberBasedOnDate($md_id){
             $conn = $this->getConnection();
 
-            // Get user offering amount on specific contribution
-            $get_user_amount_stmt = $conn->prepare("select coalesce(sum(tithes + mission + omg + pledges + donation), 0) as total_amount from user_offers where id = ?");
+            // Get user offer amount on specific contribution
+            $get_user_amount_stmt = $conn->prepare("select coalesce(sum(tithes + mission + omg + pledges + donation), 0) * 0.2 as total_amount from user_offers where id = ?");
             $get_user_amount_stmt->bind_param("i", $md_id);
             $get_user_amount_stmt->execute();
             $result = $get_user_amount_stmt->get_result();

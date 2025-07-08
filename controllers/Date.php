@@ -13,18 +13,56 @@
         public function deleteDate($date_id){
             $connection = $this->getConnection();
 
+            // Get user id's 
+            $get_user_id_stmt = $connection->prepare("select user_id from user_offers where date_id= ?");
+            $get_user_id_stmt->bind_param("i", $date_id);
+            $get_user_id_stmt->execute();
+            $user_ids = $get_user_id_stmt->get_result();
+            
+            // Update user savings
+            foreach($user_ids as $row){
+                $user_id = $row['user_id'];
+
+                $update_saving_stmt = $connection->prepare("
+                    update savings s 
+                    inner join (
+                        select sm.member_code, uo.user_id,
+                            (
+                                coalesce(uo.tithes, 0) + 
+                                coalesce(uo.mission, 0) + 
+                                coalesce(uo.omg, 0) + 
+                                coalesce(uo.pledges, 0) + 
+                                coalesce(uo.donation, 0)
+                            ) * 0.2 as share
+                        from members sm
+                        inner join user_offers uo 
+                        on sm.user_id = uo.user_id 
+                        where uo.date_id = ? 
+                    ) m on s.user_code = m.member_code
+                    set s.amount = s.amount - m.share
+                    where m.user_id = ?
+                ");
+                $update_saving_stmt->bind_param("ii", $date_id, $user_id);
+                $update_saving_stmt->execute();
+            }
+
+            // Delete date
             $delete_date_stmt = $connection->prepare("delete from dates where id=?");
             $delete_date_stmt->bind_param("i", $date_id);
             $delete_date_stmt->execute();
 
+            // delete user offers based on date
             $delete_user_offer_stmt = $connection->prepare("delete from user_offers where date_id=?");
             $delete_user_offer_stmt->bind_param("i", $date_id);
             $delete_user_offer_stmt->execute();
 
+            // Delete contribution denomination based on date
             $delete_denominations_stmt = $connection->prepare("delete from denominations where date_id=?");
             $delete_denominations_stmt->bind_param("i", $date_id);
             $delete_denominations_stmt->execute();
 
+            $get_user_id_stmt->close();
+            $update_saving_stmt->close();
             $delete_date_stmt->close();
             $delete_user_offer_stmt->close();
             $delete_denominations_stmt->close();
