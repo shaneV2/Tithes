@@ -63,7 +63,5 @@ async function deleteDate() {
             body: "date_id=" + encodeURIComponent(current_delete_date_id)
         });
         if (!response.ok) throw new Error("Unable to delete date.");
-        const data = response.text()
-        console.log(data)
     } catch (error) { console.error("Error: " + error) } 
 }

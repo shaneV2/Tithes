@@ -14,7 +14,7 @@
             $connection = $this->getConnection();
 
             // Get user id's 
-            $get_user_id_stmt = $connection->prepare("select user_id from user_offers where date_id= ?");
+            $get_user_id_stmt = $connection->prepare("select distinct(user_id) from user_offers where date_id= ?");
             $get_user_id_stmt->bind_param("i", $date_id);
             $get_user_id_stmt->execute();
             $user_ids = $get_user_id_stmt->get_result();
@@ -22,27 +22,29 @@
             // Update user savings
             foreach($user_ids as $row){
                 $user_id = $row['user_id'];
-
+                
                 $update_saving_stmt = $connection->prepare("
-                    update savings s 
-                    inner join (
-                        select sm.member_code, uo.user_id, uo.id,
-                            (
-                                coalesce(uo.tithes, 0) + 
-                                coalesce(uo.mission, 0) + 
-                                coalesce(uo.omg, 0) + 
-                                coalesce(uo.pledges, 0) + 
-                                coalesce(uo.donation, 0)
-                            ) * 0.2 as share
-                        from members sm
-                        inner join user_offers uo 
-                        on sm.user_id = uo.user_id 
-                        where uo.date_id = ?
-                        group by uo.id 
-                    ) m on s.user_code = m.member_code
-                    set s.amount = s.amount - m.share
-                    where m.user_id = ?
+                    UPDATE savings s 
+                    INNER JOIN (
+                        SELECT 
+                            sm.member_code, 
+                            uo.user_id,
+                            SUM(
+                                COALESCE(uo.tithes, 0) + 
+                                COALESCE(uo.mission, 0) + 
+                                COALESCE(uo.omg, 0) + 
+                                COALESCE(uo.pledges, 0) + 
+                                COALESCE(uo.donation, 0)
+                            ) * 0.2 AS share
+                        FROM members sm
+                        INNER JOIN user_offers uo ON sm.user_id = uo.user_id
+                        WHERE uo.date_id = ?
+                        GROUP BY sm.member_code, uo.user_id
+                    ) m ON s.user_code = m.member_code
+                    SET s.amount = s.amount - m.share
+                    WHERE m.user_id = ?
                 ");
+
                 $update_saving_stmt->bind_param("ii", $date_id, $user_id);
                 $update_saving_stmt->execute();
             }
