@@ -26,7 +26,7 @@
                 $update_saving_stmt = $connection->prepare("
                     update savings s 
                     inner join (
-                        select sm.member_code, uo.user_id,
+                        select sm.member_code, uo.user_id, uo.id,
                             (
                                 coalesce(uo.tithes, 0) + 
                                 coalesce(uo.mission, 0) + 
@@ -37,7 +37,8 @@
                         from members sm
                         inner join user_offers uo 
                         on sm.user_id = uo.user_id 
-                        where uo.date_id = ? 
+                        where uo.date_id = ?
+                        group by uo.id 
                     ) m on s.user_code = m.member_code
                     set s.amount = s.amount - m.share
                     where m.user_id = ?
@@ -108,9 +109,9 @@
 
         public function filterDate($month, $year){
             $month_number = date("n", strtotime($month));
-            
+
             $conn = $this->getConnection();
-            $stmt = $conn->prepare("select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from dates as d inner join user_offers as uo on d.id = uo.date_id where MONTH(start_date)=? and YEAR(start_date)=? group by d.id order by start_date asc");
+            $stmt = $conn->prepare("select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from dates as d left join user_offers as uo on d.id = uo.date_id where MONTH(d.start_date)=? and YEAR(d.start_date)=? group by d.id order by start_date asc");
             $stmt->bind_param("ii", $month_number, $year);
             $stmt->execute();
 
