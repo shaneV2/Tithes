@@ -272,8 +272,24 @@ header > div > p {
 .member > div {
     display: flex;
     width: 100%;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
+}
+
+.member .member-info-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.member .member-info-div > :last-child > span:first-child {
+    font-weight: 600;
+}
+
+.member .member-info-div > p:last-child {
+    word-break: break-all;
+    max-width: 50%;
 }
 
 .member:last-child {

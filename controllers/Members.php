@@ -42,7 +42,7 @@
 
         public function getAllMembers(){
             $conn = $this->getConnection();
-            $stmt = $conn->prepare('select users.* from members inner join users where members.member_code = user_code order by lastname asc');
+            $stmt = $conn->prepare('select users.*, savings.amount from members inner join users on members.member_code = user_code inner join savings on members.member_code = savings.user_code order by firstname');
             $stmt->execute();
 
             $result = $stmt->get_result();
@@ -50,7 +50,10 @@
                 while ($row = mysqli_fetch_assoc($result)){
                     echo '<div class="member">
                             <div>
-                                <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
+                                <div class="member-info-div">
+                                    <p>'. $row['firstname'] . " " . $row['lastname'] .'</p>
+                                    <p><span>Savings: </span><span>PHP '. number_format($row['amount'], 2) .'</span></p>
+                                </div>
                                 <div class="action-btns">
                                     <button class="remove-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
                                 </div>
@@ -70,8 +73,20 @@
                 $connection = $this->getConnection();
 
                 $search = "%$keyword%";
-                $stmt = $connection->prepare("select users.* from users inner join members on users.id = members.user_id where (firstname like ? or lastname like ?) order by lastname");
-                $stmt->bind_param("ss", $search, $search);
+                $starts_with = "$keyword%";
+                $stmt = $connection->prepare("
+                    select users.*, savings.amount from users 
+                    inner join members on users.id = members.user_id 
+                    inner join savings on members.member_code = savings.user_code 
+                    where (firstname like ? or lastname like ?) 
+                    order by 
+                        case 
+                            when firstname like ? then 0
+                            when lastname like ? then 1
+                            else 2
+                        end
+                    ");
+                $stmt->bind_param("ssss", $search, $search, $starts_with, $starts_with);
                 $stmt->execute();
                 
                 $result = $stmt->get_result();
@@ -79,7 +94,10 @@
                     while ($row = mysqli_fetch_assoc($result)){
                         echo '<div class="member">
                                 <div>
-                                    <p>'. $row['lastname'] . ", " . $row['firstname'] .'</p>
+                                    <div class="member-info-div">
+                                        <p>'. $row['firstname'] . " " . $row['lastname'] .'</p>
+                                        <p><span>Savings: </span><span>PHP '. number_format($row['amount'], 2) .'</span></p>
+                                    </div>
                                     <div class="action-btns">
                                         <button class="remove-btn" type="member" md_id="'. $row['id'] .'">Remove</button>
                                     </div>
