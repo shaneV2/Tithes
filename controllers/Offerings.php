@@ -27,7 +27,7 @@
             if ($id != null || !empty($id)){
                 $total_amount = (($thousands * 1000) + ($five_hundreds * 500) + ($two_hundreds * 200) + ($hundreds * 100) + ($fifties * 50) + ($twenties * 20) + ($tens * 10) + ($fives * 5) + ($ones * 1)) * 0.20;
                 $update_savings_stmt = $conn->prepare("update savings inner join members on savings.user_code = members.member_code set savings.amount = savings.amount + ? where members.user_id = ?");
-                $update_savings_stmt->bind_param('ii', $total_amount, $id);
+                $update_savings_stmt->bind_param('di', $total_amount, $id);
                 $update_savings_stmt->execute();
                 $update_savings_stmt->close(); 
             }
