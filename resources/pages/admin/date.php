@@ -39,50 +39,10 @@
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="./members.php">Members</a>
+                    <a href="#">Logout</a>
                 </div>
-                <button>Logout</button>
             </div>
         </aside>
-        <section id="user-offer-modal">
-            <div id="modal">
-                <div>
-                    <p>Arranguez, Darryl Y.</p>
-                    <div class="close-btn">
-                        <img src="../../src/assets/images/close.png" height="100%" width="100%" alt="">
-                    </div>
-                </div>
-                <table>
-                    <tr>
-                        <td>Tithes and Offering</td>
-                        <td>1000</td>
-                    </tr>
-                    <tr>
-                        <td>Mission</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <td>OMG</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>Pledges</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Donation</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>1600</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
         <section id="shares-modal">
             <div id="inner-modal">
                 <div>

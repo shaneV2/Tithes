@@ -37,8 +37,8 @@
                     <a href="#">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="./members.php">Members</a>
+                    <a href="#">Logout</a>
                 </div>
-                <button>Logout</button>
             </div>
         </aside>
         <section id="add-tithes-section">

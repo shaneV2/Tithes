@@ -39,8 +39,8 @@ header,
 }
 
 #close-menu-icon {
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 25px;
+    height: 25px;
 }
 
 #navigation-pane {
@@ -51,21 +51,24 @@ header,
     font-family: var(--body-font);
     background-color: white;
     padding: 39px 32px;
-    position: absolute;
+    position: fixed;
+    justify-content: center;
+    min-width: 454px;
     inset: 0;
     display: none;
 }
 
 #navigation-pane > div {
     display: grid;
-    gap: 74px;
+    gap: 20px;
+    width: 100%;
+    max-width: 578px;
     grid-template-rows: auto 1fr auto;
     box-sizing: border-box;
     font-size: 1.4rem;
 }
 
 #navigation-pane > div >  div:nth-child(2) {
-    padding: 0 8px;
     overflow-y: auto;
     max-height: 380px;
     display: flex;
@@ -75,23 +78,22 @@ header,
 }
 
 #navigation-pane > div> div:nth-child(2) > a {
-    padding: 26px 134px;
-    border-top: var(--border-color) 1px solid;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: var(--border-color) 1px dashed;
     text-decoration: none;
-    color: inherit;
+    color: var(--light-text-color);
 }
 
-#navigation-pane > div > div:nth-child(2) > a:last-child {
-    border-bottom: var(--border-color) 1px solid;
-}
-
-#navigation-pane > div > button {
-    padding: 26px 131px;
-    font-size: 1.4rem;
+/* #navigation-pane > div > button {
+    padding: 10px 0;
+    font-size: 14px;
     font-family: var(--body-font);
-    border-radius: 20px;
+    border-radius: 5px;
     border: var(--border-color) 1px solid;
-}
+} */
 
 
 header,

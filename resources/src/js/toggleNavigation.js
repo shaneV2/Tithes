@@ -6,7 +6,7 @@ navigation_pane.style.display = 'none' // don't show navigation pane on first pa
 
 function toggleNavigationPane(){
     if (navigation_pane.style.display == 'none'){
-        navigation_pane.style.display = 'grid'
+        navigation_pane.style.display = 'flex'
     }else {
         navigation_pane.style.display = 'none'
     }

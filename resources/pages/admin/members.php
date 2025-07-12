@@ -42,8 +42,8 @@
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="#">Members</a>
+                    <a href="#">Logout</a>
                 </div>
-                <button>Logout</button>
             </div>
         </aside>
         <section id="add-member-section">
