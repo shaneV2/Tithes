@@ -35,5 +35,43 @@
             $conn->close();
             $stmt->close();
         }
+        
+        public function getUserContributions(){
+            $id = 1;
+            $conn = $this->getConnection();
+            $query = "
+                select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from user_offers uo
+                inner join dates d 
+                on uo.date_id = d.id 
+                where user_id = 1   
+                group by uo.date_id
+                order by d.start_date
+            ";
+            $result = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($result) == 0){
+                echo '<p style="text-align: center; margin-top:20px;">No contributions added yet.</p>';
+            }else {
+                while ($row = mysqli_fetch_assoc($result)){
+                    $date_id = $row['id'];
+                    $start_date = new DateTime($row['start_date']);
+                    $end_date = new DateTime($row['end_date']);
+
+                    $formatted_sd = $start_date->format("F j, Y"); 
+                    $formatted_ed = $end_date->format("F j, Y"); 
+                    $amount = number_format($row['total_amount']);
+
+                    $formatted = $formatted_sd . " - " . $formatted_ed;
+                    echo '<div class="date">
+                            <div>
+                                <p>'. $formatted .'</p>
+                                <p><span>Amount: </span><span>PHP '. $amount .'</span></p>
+                            </div>
+                        </div>';
+                }
+            }
+            
+            $conn->close();
+        }
     }
 ?>

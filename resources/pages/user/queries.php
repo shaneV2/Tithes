@@ -1,21 +1,41 @@
 <?php
-
     require '../../../controllers/Database.php';
-    require '../../../controllers/Login.php';
+    require '../../../controllers/Date.php';
+    require '../../../controllers/Offerings.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $action = $_GET['action'];
-
-        switch ($action){
-            case 'login':
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-
-                $login = new Login();
-                $login->loginUser($username, $password);
-                return;
+        
+        switch($action){
         }
 
-    }else if($_SERVER['REQUEST_METHOD'] == "GET"){
-        echo "get req.";
+    }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){
+        $action = $_GET['action'];
+        $date_id = $_GET['d_id'] ?? null ;
+        
+        switch($action) {
+            case 'get-user-contributions':
+                $offerings = new Offerings();
+                $offerings->getUserContributions();
+                break;
+            
+            case 'filter-date':
+                $month = $_GET['month'];
+                $year = $_GET['year'];
+            
+                $date = new Date();
+                $date->filterDate($month, $year);
+                break;
+
+            case 'clear-session-for-filter':
+                session_start();
+                if (isset($_SESSION['filter_month'])){
+                    session_unset();
+                    session_destroy();
+                }
+                session_destroy();
+                break;
+        }
     }
+
+?>

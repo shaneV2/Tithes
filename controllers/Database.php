@@ -4,7 +4,7 @@
         private $hostname = "localhost";
         private $username = "root";
         private $password = "";
-        private $db = "cfms_db";
+        private $db = "cfms_db2";
 
         public function getConnection(){
             $connection = mysqli_connect($this->hostname, $this->username, $this->password, $this->db);
