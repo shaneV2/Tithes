@@ -107,9 +107,9 @@
             </section>
             <section id="savings-section">
                 <p>Savings</p>
-                <div>
-                    <p>PHP: 1,000</p>
-                    <p>One thousand pesos</p>
+                <div id="amount-section">
+                    <p>PHP: <span id="amount">--</span></p>
+                    <p id="amount-spell">--</p>
                 </div>
             </section>
         </main>
@@ -118,9 +118,10 @@
         <script src="../../src/js/toggleNavigation.js" type="module"></script>
         <script src="../../src/js/selectDate.js" type="module"></script>
         <script src="../../src/js/user-homepage/useDateActions.js" type="module"></script>
-        <script src="../../src/js/closeDateOptionsOnDocumentClick.js" type="module"></script>
         <script src="../../src/js/user-homepage/useFilter.js" type="module"></script>
+        <script src="../../src/js/user-homepage/getUserSavings.js" type="module"></script>
         <script src="../../src/js/user-homepage/addToClipboard.js" type="module"></script>
+        <script src="../../src/js/closeDateOptionsOnDocumentClick.js" type="module"></script>
         </script>
     </div>
 </body>

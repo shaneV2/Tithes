@@ -2,6 +2,7 @@
     require '../../../controllers/Database.php';
     require '../../../controllers/Date.php';
     require '../../../controllers/Offerings.php';
+    require '../../../controllers/User.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $action = $_GET['action'];
@@ -17,6 +18,11 @@
             case 'get-user-contributions':
                 $offerings = new Offerings();
                 $offerings->getUserContributions();
+                break;
+            
+            case 'get-user-savings':
+                $user = new User();
+                $user->getUserSavings();
                 break;
             
             case 'filter-date':
