@@ -108,7 +108,7 @@
             <section id="savings-section">
                 <p>Savings</p>
                 <div id="amount-section">
-                    <p>PHP: <span id="amount">--</span></p>
+                    <p>&#x20B1; <span id="amount">--</span></p>
                     <p id="amount-spell">--</p>
                 </div>
             </section>

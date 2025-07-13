@@ -40,5 +40,5 @@ export default function numberToWordConversion(num) {
     const decimal_number = amount[1] 
 
     if (num == 0) return "zero";
-    else return convert_millions(whole_number) + " Pesos and " + convert_millions(decimal_number) + "Cents";
+    else return convert_millions(whole_number) + " Pesos and " + convert_millions(decimal_number) + "Centavos";
 }

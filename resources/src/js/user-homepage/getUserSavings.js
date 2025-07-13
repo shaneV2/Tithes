@@ -10,8 +10,9 @@ export default async function getUserSavings(){
         if (!response.ok) throw new Error("Network error. Make sure you are connected to the internet.");
         const data = await response.text();
         amount_div.textContent = data
-
-        const number = Number(data).toFixed(2)
+        
+        const num_str = data.replace(/,/g, '')
+        const number = Number(num_str).toFixed(2)
         amount_spell.textContent = numberToWordConversion(number)
     } catch (error) {
         console.error("Fetch error")

@@ -28,7 +28,7 @@ header,
 }
 
 .main {
-    padding: 23px 0 100px;
+    padding: 23px 0;
     position: relative;
 }
 
@@ -137,6 +137,7 @@ header > div > div > h1 {
 }
 
 #code-section > p {
+    font-size: 14px;
     color: var(--light-text-color);
 }
 
@@ -348,10 +349,6 @@ select {
     color: var(--text-color);
 }
 
-#date > a > p {
-    font-size: 1rem;
-}
-
 #date-list-section > p {
     font-size: 14px;
     font-weight: 500;
@@ -364,7 +361,7 @@ select {
     border-bottom: var(--border-color) 1px dashed;
     display: flex;
     flex-direction: column;
-    height: 150px;
+    height: 225px;
     overflow-y: auto;
 }
 
@@ -379,7 +376,6 @@ select {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    margin: 0 10px;
 }
 
 .date > div {
@@ -443,4 +439,21 @@ select {
 #savings-section > div > p:last-child {
     color: var(--dark-green);
     font-size: 14px;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-text-color); 
 }
