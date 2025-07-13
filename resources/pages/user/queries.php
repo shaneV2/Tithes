@@ -29,8 +29,8 @@
                 $month = $_GET['month'];
                 $year = $_GET['year'];
             
-                $date = new Date();
-                $date->filterDate($month, $year);
+                $offerings = new Offerings();
+                $offerings->filterUserContribution($month, $year);
                 break;
 
             case 'clear-session-for-filter':
