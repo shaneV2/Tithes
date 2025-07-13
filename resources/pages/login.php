@@ -27,7 +27,7 @@
                 }
             ?>
             <div>
-                <form action="./user/queries.php?action=login" method="post">
+                <form action="./queries.php?action=login" method="post">
                     <div>
                         <label for="username">Username</label>
                         <input id="username" type="text" name="username" required>
