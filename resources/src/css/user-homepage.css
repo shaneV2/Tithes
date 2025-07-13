@@ -5,6 +5,8 @@
     --dark-blue: #08053F;
 
     --border-color: #BEBEBE;
+    --white: #F4F4F4;
+    --gray: #e9e9e9;
 
     --text-color: #363636;
     --light-text-color: #545151;
@@ -95,8 +97,7 @@ header,
 } */
 
 
-header,
-header > div {
+header {
     justify-content: space-between;
     display: flex;
     gap: 14px;
@@ -106,11 +107,37 @@ header > div {
 
 header > div > p {
     padding: 1.3rem 1.3rem;
-    background-color: var(--dark-green);
-    border-radius: 100%;
-    color: var(--white-text-color);
+    background-color: var(--gray);
+    border: var(--border-color) 1px solid;
+    color: var(--text-color);
     font-family: var(--body-font);
     font-weight: 700;
+}
+
+#user-info-section {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    word-break: break-all;
+}
+
+header > div > div > h1 {
+    font-weight: 400;
+    font-size: 26px;
+    color: black;
+}
+
+#code-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+#code-section > p {
+    color: var(--light-text-color);
 }
 
 select {

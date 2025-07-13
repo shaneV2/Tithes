@@ -14,9 +14,15 @@
 <body>
     <div class="main">
         <header>
-            <div>
-                <p>AP</p>
-                <h1>ADMIN PANEL</h1>
+            <div id="user-info-section">
+                <p>SA</p>
+                <div>
+                    <h1>Shane Arranguez</h1>
+                    <div id="code-section">
+                        <p id="user-code">A0000909090001</p>
+                        <img id="copy-img-element"  src="../../src/assets/svg/copy.svg" width="14" height="14" alt="">
+                    </div>
+                </div>
             </div>
             <nav>
                 <div id="menu-icon">
@@ -114,6 +120,8 @@
         <script src="../../src/js/user-homepage/useDateActions.js" type="module"></script>
         <script src="../../src/js/closeDateOptionsOnDocumentClick.js" type="module"></script>
         <script src="../../src/js/user-homepage/useFilter.js" type="module"></script>
+        <script src="../../src/js/user-homepage/addToClipboard.js" type="module"></script>
+        </script>
     </div>
 </body>
 </html>
