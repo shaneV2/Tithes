@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    require "../user-checker.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

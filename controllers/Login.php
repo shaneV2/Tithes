@@ -4,7 +4,7 @@
             $connection = $this->getConnection();
 
             try {
-                $stmt = $connection->prepare("select username, password, user_type from users where username=?");
+                $stmt = $connection->prepare("select * from users where username=?");
                 $stmt->bind_param("s", $username);
                 $stmt->execute();
 
@@ -18,9 +18,16 @@
                         if (password_verify($password, $password_hash)){
                             // if user type is standard, go to user page
                             // otherwise, go to admin page 
-                            if (strtolower($user_type) != 'admin'){
+                            if (strtolower($user_type) === 'standard'){
+                                session_start();
+                                $_SESSION['user_type'] = 'standard';
+                                $_SESSION['user_id'] = $row['id'];
+                                $_SESSION['firstname'] = $row['firstname'];
+                                $_SESSION['lastname'] = $row['lastname'];
                                 header("Location: ./user/homepage.php");
                             } else if (strtolower($user_type) == 'admin'){
+                                session_start();
+                                $_SESSION['user_type'] = 'admin';
                                 header("Location: ./admin/homepage.php");
                             }
                         }else {

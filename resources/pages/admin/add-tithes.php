@@ -1,4 +1,7 @@
 <?php 
+    session_start();
+    require "../user-checker.php";
+
     $date_id = $_GET['d_id'];
     $start_date = $_GET['start_date'];
     $end_date = $_GET['end_date'];

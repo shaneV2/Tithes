@@ -1,3 +1,19 @@
+<?php 
+    session_start();
+    require "../user-checker.php";
+
+    $firstname = "--";
+    $lastname = "--";
+    $initials = "";
+    if (isset($_SESSION['firstname'])){
+        $firstname = $_SESSION['firstname'];
+        $initials .= $firstname[0];
+    }
+    if (isset($_SESSION['lastname'])){
+        $lastname = $_SESSION['lastname'];
+        $initials .= $lastname[0];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +31,11 @@
     <div class="main">
         <header>
             <div id="user-info-section">
-                <p>SA</p>
+                <p><?php echo $initials;?></p>
                 <div>
-                    <h1>Shane Arranguez</h1>
+                    <h1><?php echo $firstname . " " . $lastname;?></h1>
                     <div id="code-section">
-                        <p id="user-code">A0000909090001</p>
+                        <p id="user-code">--</p>
                         <img id="copy-img-element"  src="../../src/assets/svg/copy.svg" width="14" height="14" alt="">
                     </div>
                 </div>
@@ -120,6 +136,7 @@
         <script src="../../src/js/user-homepage/useDateActions.js" type="module"></script>
         <script src="../../src/js/user-homepage/useFilter.js" type="module"></script>
         <script src="../../src/js/user-homepage/getUserSavings.js" type="module"></script>
+        <script src="../../src/js/user-homepage/getUserCode.js" type="module"></script>
         <script src="../../src/js/user-homepage/addToClipboard.js" type="module"></script>
         <script src="../../src/js/closeDateOptionsOnDocumentClick.js" type="module"></script>
         </script>

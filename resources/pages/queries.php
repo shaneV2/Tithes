@@ -2,6 +2,7 @@
 
     require '../../controllers/Database.php';
     require '../../controllers/Login.php';
+    require '../../controllers/User.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $action = $_GET['action'];
@@ -14,8 +15,5 @@
                 $login = new Login();
                 $login->loginUser($username, $password);
                 return;
-        }
-
-    }else if($_SERVER['REQUEST_METHOD'] == "GET"){
-        echo "get req.";
+        }    
     }

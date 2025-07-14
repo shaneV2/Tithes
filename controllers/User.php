@@ -15,6 +15,25 @@
                 echo number_format($savings_amount, 2); 
             }
 
+            $stmt->close();
+            $conn->close();
+        }
+
+        public function getUserCode(){
+            session_start();
+            $id = $_SESSION['user_id'];
+
+            $conn = $this->getConnection();
+            $stmt = $conn->prepare("select user_code from users where id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if (mysqli_num_rows($result) > 0){
+                echo mysqli_fetch_assoc($result)['user_code']; 
+            }
+
+            $stmt->close();
             $conn->close();
         }
     }
