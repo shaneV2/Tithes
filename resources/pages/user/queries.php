@@ -8,6 +8,10 @@
         $action = $_GET['action'];
         
         switch($action){
+            case 'get-user-code':
+                $user = new User();
+                $user->getUserCode();
+                break;
         }
 
     }elseif ($_SERVER['REQUEST_METHOD'] == "GET"){
