@@ -154,7 +154,6 @@
                                 <p><span>Amount: </span><span>PHP '. number_format($row['total_amount']) .'</span></p>
                             </div>
                             <div class="action-btns">
-                                <a href="" class="edit-btn">Edit</a>
                                 <button class="delete-btn" type="member" md_id="'. $row['id'] .'">Delete</button>
                             </div>
                         </div>';

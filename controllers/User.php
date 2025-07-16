@@ -2,7 +2,8 @@
 
     class User extends Database {
         public function getUserSavings(){
-            $id = 1;
+            session_start();
+            $id = $_SESSION['user_id'];
 
             $conn = $this->getConnection();
             $stmt = $conn->prepare("select s.amount from savings s inner join users u on s.user_code = u.user_code where u.id = ?");

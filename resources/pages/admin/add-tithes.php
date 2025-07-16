@@ -54,7 +54,7 @@
                     <input style="display: none;" type="text" name="date_id" value="<?php echo $date_id;?>">
                     <input style="display: none;" type="text" name="start_date" value="<?php echo $start_date;?>">
                     <input style="display: none;" type="text" name="end_date" value="<?php echo $end_date;?>">
-                    <input id="m_id" type="text" name="m_id">
+                    <input style="display: none;" id="m_id" type="text" name="m_id">
                 </div>
                 <div id="offerings-input-field">
                     <div id="name-input-section">

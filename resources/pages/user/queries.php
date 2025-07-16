@@ -38,12 +38,10 @@
                 break;
 
             case 'clear-session-for-filter':
-                session_start();
                 if (isset($_SESSION['filter_month'])){
+                    session_start();
                     session_unset();
-                    session_destroy();
                 }
-                session_destroy();
                 break;
         }
     }

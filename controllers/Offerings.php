@@ -37,7 +37,8 @@
         }
         
         public function getUserContributions(){
-            $id = 1;
+            session_start();
+            $id = $_SESSION['user_id'];
             $conn = $this->getConnection();
             $query = "
                 select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from user_offers uo
@@ -80,18 +81,19 @@
         public function filterUserContribution($month, $year){
             $month_number = date("n", strtotime($month));
 
-            $id = 1;
+            session_start();
+            $id = $_SESSION['user_id'];
             $conn = $this->getConnection();
             $query = "
                 select d.*, coalesce(sum(uo.tithes + uo.mission + uo.omg + uo.pledges + uo.donation), 0) as total_amount from user_offers uo
                 inner join dates d 
                 on uo.date_id = d.id 
-                where user_id = 1 and (MONTH(d.start_date)=? and YEAR(d.start_date)=?)     
+                where user_id = ? and (MONTH(d.start_date)=? and YEAR(d.start_date)=?)     
                 group by uo.date_id
                 order by d.start_date
             ";
             $stmt = $conn->prepare($query);
-            $stmt->bind_param("ii", $month_number, $year);
+            $stmt->bind_param("iii",$id, $month_number, $year);
             $stmt->execute();
             $result = $stmt->get_result();
 
