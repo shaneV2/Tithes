@@ -44,7 +44,7 @@
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="#">Members</a>
-                    <a href="#">Logout</a>
+                    <button id="logout-btn">Logout</button>
                 </div>
             </div>
         </aside>
@@ -98,6 +98,7 @@
         </section>
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/logout.js" type="module"></script>
     <script src="../../src/js/members/setupMembersActions.js" type="module"></script>
     <script src="../../src/js/members/toggleIconInSearch.js" type="module"></script>
 </body>

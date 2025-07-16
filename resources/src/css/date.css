@@ -89,6 +89,18 @@ header,
     color: var(--light-text-color);
 }
 
+#logout-btn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-bottom: 1px var(--border-color) dashed;
+    color: var(--light-text-color);
+    font-weight: 500;
+    font-family: var(--body-font);
+    font-size: 14px;
+}
+
 /* #navigation-pane > div > button {
     padding: 10px 0;
     font-size: 14px;

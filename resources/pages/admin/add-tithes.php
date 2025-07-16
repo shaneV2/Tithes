@@ -40,7 +40,7 @@
                     <a href="#">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="./members.php">Members</a>
-                    <a href="#">Logout</a>
+                    <button id="logout-btn">Logout</button>
                 </div>
             </div>
         </aside>
@@ -137,6 +137,7 @@
         </section>
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/logout.js" type="module"></script>
     <script src="../../src/js/add-tithes/checkUserInputs.js" type="module"></script>
     <script src="../../src/js/add-tithes/getMembersSuggestionOnUserInput.js" type="module"></script>
 </body>

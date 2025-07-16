@@ -35,7 +35,7 @@
                     <a href="./homepage.php">Home</a>
                     <a href="#">Giving</a>
                     <a href="./members.php">Members</a>
-                    <a href="#">Logout</a>
+                    <button id="logout-btn">Logout</button>
                 </div>
             </div>
         </aside>
@@ -143,6 +143,7 @@
     <script src="../../src/js/selectMonth.js" type="module"></script>
     <script src="../../src/js/selectYear.js" type="module"></script>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/logout.js" type="module"></script>
     <script src="../../src/js/giving/addDate.js" type="module"></script>
     <script src="../../src/js/selectDate.js" type="module"></script>
     <script src="../../src/js/giving/useDateActions.js" type="module"></script>

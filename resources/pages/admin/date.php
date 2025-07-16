@@ -42,7 +42,7 @@
                     <a href="./homepage.php">Home</a>
                     <a href="./giving.php">Giving</a>
                     <a href="./members.php">Members</a>
-                    <a href="#">Logout</a>
+                    <button id="logout-btn">Logout</button>
                 </div>
             </div>
         </aside>
@@ -89,6 +89,7 @@
         </section>
     </div>
     <script src="../../src/js/toggleNavigation.js" type="module"></script>
+    <script src="../../src/js/logout.js" type="module"></script>
     <script src="../../src/js/dates/members.js" type="module"></script>
     <script src="../../src/js/dates/loadDenominationsAndShares.js" type="module"></script>
     <script src="../../src/js/dates/useMemberActions.js" type="module"></script>

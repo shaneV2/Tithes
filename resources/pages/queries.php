@@ -15,5 +15,11 @@
                 $login = new Login();
                 $login->loginUser($username, $password);
                 return;
+
+            case 'logout':
+                session_start();
+                session_unset();
+                $_SESSION = [];
+                session_destroy();
         }    
     }

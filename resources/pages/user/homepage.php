@@ -51,9 +51,7 @@
                 <div id="close-menu-icon"><img src="../../src/assets/images/close.png" width="100%" height="100%" alt=""></div>
                 <div>
                     <a href="#">Home</a>
-                    <a href="./giving.php">Giving</a>
-                    <a href="./members.php">Members</a>
-                    <a href="#">Logout</a>
+                    <button id="logout-btn">Logout</button>
                 </div>
             </div>
         </aside>
@@ -116,7 +114,7 @@
                 </div>
             </section> -->
             <section id="date-list-section">  
-                <p>Date List</p>
+                <p>Contribution List</p>
                 <div id="date-list">
                     <!-- dates reflects here -->
                 </div>
@@ -132,6 +130,7 @@
         <script src="../../src/js/selectMonth.js" type="module"></script>
         <script src="../../src/js/selectYear.js" type="module"></script>
         <script src="../../src/js/toggleNavigation.js" type="module"></script>
+        <script src="../../src/js/logout.js" type="module"></script>
         <script src="../../src/js/selectDate.js" type="module"></script>
         <script src="../../src/js/user-homepage/useDateActions.js" type="module"></script>
         <script src="../../src/js/user-homepage/useFilter.js" type="module"></script>
